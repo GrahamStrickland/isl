@@ -1,0 +1,16 @@
+% Question 6
+
+When utilising a parametric statistical learning approach, we attempt to estimate
+a countable number of parameters $\beta_i$ for $i \in \lbrace 1, \dotsc, p \rbrace$
+s.t. the observation $(X, Y)$ has $Y$ s.t.
+\[
+    Y \approx f(X) = \beta_0 + \beta_1 X_1 + \dotsb + \beta_p X_p.
+\]
+This means we need to select the number of parameters used in order to minimize
+the error. In doing so, we risk overfitting the model to the data, so that the 
+approximation does not closely match the form of $f$.\par
+\qquad In contrast, a non-parametric method makes no assumption about the parameters 
+used, with the advantage that we do not need to concern ourselves with the number of
+parameters used, but with the disadvantage that we must select a level of 
+smoothness which makes the approximation to $f$ easy to calculate without 
+introducing unnecessary variation in the shape of the approximation relative to $f$.
