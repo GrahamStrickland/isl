@@ -6,61 +6,68 @@
     $j$th variable. We calculate the Euclidian distances using the formula
     \begin{equation*}
         \begin{split}
-            &d((X_1 = 0, X_2 = 0, X_3 = 0), (x_{i1}, x_{i2}, x_{i3})) \\
-            = &\sqrt{{(0 - x_{i1})}^2 + {(0 - x_{i2})}^2 + {(0 - x_{i3})}^2} \\
-            = &\sqrt{{(-x_{i1})}^2 + {(-x_{i2})}^2 + {(-x_{i3})}^2},
+            &d\bigl((X_1 = 0, X_2 = 0, X_3 = 0), (x_{i1}, x_{i2}, x_{i3})\bigr) \\
+            = \, &\sqrt{{(0 - x_{i1})}^2 + {(0 - x_{i2})}^2 + {(0 - x_{i3})}^2} \\
+            = \, &\sqrt{{(-x_{i1})}^2 + {(-x_{i2})}^2 + {(-x_{i3})}^2},
         \end{split}
     \end{equation*}
     for $i \in \lbrace 1, \dotsc, 6\rbrace$.\par
     Thus we have
     \begin{equation*}
         \begin{split}
-            &d((X_1 = 0, X_2 = 0, X_3 = 0), (x_{11}, x_{12}, x_{13})) \\
-            = &\sqrt{9^2} \\ 
-            = &9,
+            &d\bigl((X_1 = 0, X_2 = 0, X_3 = 0), (x_{11}, x_{12}, x_{13})\bigr) \\
+            = \, &\sqrt{9^2} \\ 
+            = \, &9,
         \end{split}
     \end{equation*}
     \begin{equation*}
         \begin{split}
-            &d((X_1 = 0, X_2 = 0, X_3 = 0), (x_{21}, x_{22}, x_{23})) \\ 
-            = &\sqrt{2^2} \\ 
-            = &2,
+            &d\bigl((X_1 = 0, X_2 = 0, X_3 = 0), (x_{21}, x_{22}, x_{23})\bigr) \\ 
+            = \, &\sqrt{2^2} \\ 
+            = \, &2,
         \end{split}
     \end{equation*}
     \begin{equation*}
         \begin{split}
-            &d((X_1 = 0, X_2 = 0, X_3 = 0), (x_{31}, x_{32}, x_{33})) \\ 
-            = &\sqrt{1^2 + 3^2} \\
-            = &\sqrt{10} \\
-            \approx &3.162278,
+            &d\bigl((X_1 = 0, X_2 = 0, X_3 = 0), (x_{31}, x_{32}, x_{33})\bigr) \\ 
+            = \, &\sqrt{1^2 + 3^2} \\
+            = \, &\sqrt{10} \\
+            \approx \, &3.162278,
         \end{split}
     \end{equation*}
     \begin{equation*}
         \begin{split}
-            &d((X_1 = 0, X_2 = 0, X_3 = 0), (x_{41}, x_{42}, x_{43})) \\
-            = &\sqrt{1^2 + 2^2} \\ 
-            = &\sqrt{5} \\ 
-            \approx &2.236068,
+            &d\bigl((X_1 = 0, X_2 = 0, X_3 = 0), (x_{41}, x_{42}, x_{43})\bigr) \\
+            = \, &\sqrt{1^2 + 2^2} \\ 
+            = \, &\sqrt{5} \\ 
+            \approx \, &2.236068,
         \end{split}
     \end{equation*}
     \begin{equation*}
         \begin{split}
-            &d((X_1 = 0, X_2 = 0, X_3 = 0), (x_{51}, x_{52}, x_{53})) \\ 
-            = &\sqrt{(-1)^2 + 1^2} \\
-            = &\sqrt{2} \\ 
-            \approx &1.414214,
+            &d\bigl((X_1 = 0, X_2 = 0, X_3 = 0), (x_{51}, x_{52}, x_{53})\bigr) \\ 
+            = \, &\sqrt{(-1)^2 + 1^2} \\
+            = \, &\sqrt{2} \\ 
+            \approx \, &1.414214,
         \end{split}
     \end{equation*}
     and 
     \begin{equation*}
         \begin{split}
-            &d((X_1 = 0, X_2 = 0, X_3 = 0), (x_{61}, x_{62}, x_{63})) \\ 
-            = &\sqrt{1^2 + 1^2 + 1^2} \\
-            = &\sqrt{3} \\ 
-            \approx &1.732051.
+            &d\bigl((X_1 = 0, X_2 = 0, X_3 = 0), (x_{61}, x_{62}, x_{63})\bigr) \\ 
+            = \, &\sqrt{1^2 + 1^2 + 1^2} \\
+            = \, &\sqrt{3} \\ 
+            \approx \, &1.732051.
         \end{split}
     \end{equation*}
-    \item[(b)]
-    \item[(c)]
-    \item[(d)]
+    \item[(b)] Our prediction with $K = 1$ is that $Y = \text{Green}$ since the 
+    nearest neighbour to the point $(X_1 = 0, X_2 = 0, X_3 = 0)$ is the point
+    given by $(x_{51}, x_{52}, x_{53})$ corresponding to observation 5, which yields
+    the value $y = \text{Green}$.
+    \item[(c)] With $K = 3$, we have $Y = \text{Red}$, since of the 3 nearest 
+    neighbours calculated in (a), we have two with value $y = \text{Red}$ and only
+    one with value $y = \text{Green}$.
+    \item[(d)] We would expect the best value to be small, since this would yield
+    a decision boundary which is highly flexible and more easily approximates the 
+    non-linear nature of the Bayes decision boundary.
 \end{itemize}
