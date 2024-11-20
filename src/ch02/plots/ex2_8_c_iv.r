@@ -1,4 +1,4 @@
-# Exercise 2.9(c)(iv) - Plots of Elite and Outstate data
+# Exercise 2.8(c)(iv) - Plots of Elite and Outstate data
 
 college <- read.csv(
   "../../datasets/College.csv",
@@ -14,7 +14,7 @@ Elite[Top10perc > 50] <- "Yes"
 Elite <- as.factor(Elite)
 college <- data.frame(college, Elite)
 
-pdf("plots/ex8_c_iv.pdf")
+pdf("plots/ex2_8_c_iv.pdf")
 plot(
   Elite,
   Outstate,

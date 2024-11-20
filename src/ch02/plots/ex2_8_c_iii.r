@@ -1,4 +1,4 @@
-# Exercise 2.9(c)(iii) - Plots of Outstate versus Private data
+# Exercise 2.8(c)(iii) - Plots of Outstate versus Private data
 
 college <- read.csv(
   "../../datasets/College.csv",
@@ -9,7 +9,7 @@ rownames(college) <- college[, 1]
 college <- college[, -1]
 attach(college)
 
-pdf("plots/ex8_c_iii.pdf")
+pdf("plots/ex2_8_c_iii.pdf")
 plot(
   Private,
   Outstate,
