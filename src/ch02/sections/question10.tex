@@ -70,4 +70,26 @@ Format:
     \end{figure}
     It appears that high per capita crime rates are associated with a 
     larger population in the lower status category.
+    \item[(d)] Yes, we have the following summary:
+    \begin{verbatim}
+> summary(Boston$crim)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.
+ 0.00632  0.08204  0.25651  3.61352  3.67708 88.97620
+    \end{verbatim}
+    While the median and mean for the \verb|crim| data are 
+    0.25651 and 3.61352, respectively, the range is $[0.00632, 88.97620]$,
+    so that some census tracts must have particularly high crime rates.
+    Tax rates appear to be more evenly distributed, as can be seen from the
+    following:
+    \begin{verbatim}
+> summary(Boston$tax)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+  187.0   279.0   330.0   408.2   666.0   711.0
+    \end{verbatim}
+    The same applies to pupil-teacher ratios:
+    \begin{verbatim}
+> summary(Boston$ptratio)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+  12.60   17.40   19.05   18.46   20.20   22.00
+    \end{verbatim}
 \end{itemize}
