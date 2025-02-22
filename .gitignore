@@ -49,3 +49,6 @@ datasets/*
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+
+# Plots
+/plots/*.pdf
