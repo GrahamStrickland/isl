@@ -3,7 +3,7 @@
 library(ISLR2)
 attach(Boston)
 
-pdf("plots/ex2_10_b.pdf")
+pdf("ex2_10_b.pdf")
 
 par(mfrow = c(2, 2))
 plot(

@@ -3,7 +3,7 @@
 library(ISLR2)
 attach(Boston)
 
-pdf("plots/ex2_10_c.pdf")
+pdf("ex2_10_c.pdf")
 
 plot(
   crim,

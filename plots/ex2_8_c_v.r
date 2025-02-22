@@ -1,7 +1,7 @@
 # Exercise 2.8(c)(v) - Plots of college data
 
 college <- read.csv(
-  "../../datasets/College.csv",
+  "../datasets/College.csv",
   na.strings = "?",
   stringsAsFactors = TRUE
 )
@@ -9,7 +9,7 @@ rownames(college) <- college[, 1]
 college <- college[, -1]
 attach(college)
 
-pdf("plots/ex2_8_c_v.pdf")
+pdf("ex2_8_c_v.pdf")
 
 par(mfrow = c(2, 2))
 hist(
