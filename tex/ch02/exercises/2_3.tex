@@ -1,17 +1,17 @@
 % Exercise 2.3
 
 \begin{itemize}
-    \item[(a)] We have the following R plot of various error curves:
+    \item[(a)] We have an R plot of various error curves in Figure~\ref{fig1}:
     \begin{figure}[!ht]
         \includegraphics[scale=0.6, center]{../plots/ex2_3_a.pdf}
         \caption{
             Typical (squared) bias, variance, training error, test error, and Bayes 
-            (irreducible) error
-        }\label{fig:figure1}
+            (irreducible) error \label{fig1}
+        }
     \end{figure}
     Arbitrary polynomials of the appropriate degree were used to generate these 
     plots, since they are approximations, using the following script:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 # Exercise 2.3(a) - Plots of error curves
 
 squared_bias <- function(x) {
@@ -64,7 +64,7 @@ legend("topright",
 
 dev.off()
 
-    \end{verbatim}
+    \end{verbatim}\normalsize
   \item[(b)] We are given that the training error will always be greater than
   the (squared) bias, and that both will be u-shaped. The variance will always
   be less than the (squared) bias, while the test error will decrease as the model

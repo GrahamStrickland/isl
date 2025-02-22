@@ -2,7 +2,7 @@
 
 \begin{itemize}
     \item[(a)] The quantitative predictors are \verb|mpg|, \verb|cylinders|,
-    \verb|displacement|, \verb|horsepower|, \verb|weight|, \verb|acceleration|,
+    \verb|displacement|, \par \verb|horsepower|, \verb|weight|, \verb|acceleration|,
     \verb|year|, and \verb|origin|. The only qualitative predictor is \verb|name|.
     \item[(b)] The range of each quantitative predictor is as follows:
     \begin{center}
@@ -38,11 +38,12 @@
     \end{center}
     \item[(d)] We have the following adjusted values for the range, mean, and 
     standard deviation:
+
     \begin{center}
         \begin{tabular}{ l | r | r | r | r }
-            \multicolumn{1}{c}{Predictor} & \multicolumn{1}{c}{Minimum} 
-            & \multicolumn{1}{c}{Maximum} & \multicolumn{1}{c}{Mean} 
-            & \multicolumn{1}{c}{Standard Deviation} \\
+            \multicolumn{1}{c}{Predictor} & \multicolumn{1}{c}{Min.} 
+            & \multicolumn{1}{c}{Max.} & \multicolumn{1}{c}{Mean} 
+            & \multicolumn{1}{c}{S.D.} \\
             \hline
             \verb|mpg| & 11.0 & 46.6 & 24.40443 & 7.867283 \\
             \verb|cylinders| & 3 & 8 & 5.373418 & 1.654179 \\
@@ -54,12 +55,13 @@
             \verb|origin| & 1 & 3 & 1.601266 & 0.81991
         \end{tabular}
     \end{center}
+
     \item[(e)]
-    In Figure 6, we have plots of the \verb|Auto| data highlighting the 
+    In Figure~\ref{fig6}, we have plots of the \verb|Auto| data highlighting the 
     relationships between some of the variables.
     \begin{figure}[!ht]
         \includegraphics[width=\textwidth, center]{../plots/ex2_9_e.pdf}
-        \caption{Scatterplots of Auto data}
+        \caption{Scatterplots of Auto data \label{fig6}}
     \end{figure}
     As can be seen by these plots, there is a strong correlation between the
     number of cylinders and the gas mileage (\verb|mpg|)of the vehicle in question.

@@ -2,7 +2,7 @@
 
 \begin{itemize}
     \item[(a)] We have the following output from calling \verb|?Boston|:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 Boston                  package:ISLR2                  R Documentation
 
 Boston Data
@@ -47,12 +47,12 @@ Format:
      ‘lstat’ lower status of the population (percent).
 
      ‘medv’ median value of owner-occupied homes in $1000s.
-    \end{verbatim}
-    \item[(b)] In Figure 7, we have some of the data from the \verb|Boston| data
+    \end{verbatim}\normalsize
+\item[(b)] In Figure~\ref{fig7}, we have some of the data from the \verb|Boston| data
     set displayed in scatterplots.\par
     \begin{figure}[!ht]
         \includegraphics[width=\textwidth, center]{../plots/ex2_10_b.pdf}
-        \caption{Scatterplots of Boston data}
+        \caption{Scatterplots of Boston data \label{fig7}}
     \end{figure}
     \qquad From the scatterplots in this figure, we may see that as the distance to 
     employment centres increases, the nitrogen oxide concentration decreases,
@@ -63,59 +63,59 @@ Format:
     \qquad We also see that a higher number of rooms and value of owner-occupied 
     homes tend to be concentrated amongst the lower status of the population.
     \item[(c)] We can see that per capita crime rates are correlated with the
-    lower status of the population by looking at Figure 8.
+    lower status of the population by looking at Figure~\ref{fig8}.
     \begin{figure}[!ht]
         \includegraphics[width=\textwidth, center]{../plots/ex2_10_c.pdf}
-        \caption{Scatterplot of crim vs lstat data}
+        \caption{Scatterplot of crim vs lstat data \label{fig8}}
     \end{figure}
     It appears that high per capita crime rates are associated with a 
     larger population in the lower status category.
     \item[(d)] Yes, we have the following summary:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > summary(Boston$crim)
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max.
  0.00632  0.08204  0.25651  3.61352  3.67708 88.97620
-    \end{verbatim}
+    \end{verbatim}\normalsize
     While the median and mean for the \verb|crim| data are 
     0.25651 and 3.61352, respectively, the range is $[0.00632, 88.97620]$,
     so that some census tracts must have particularly high crime rates.
     Tax rates appear to be more evenly distributed, as can be seen from the
     following:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > summary(Boston$tax)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
   187.0   279.0   330.0   408.2   666.0   711.0
-    \end{verbatim}
+    \end{verbatim}\normalsize
     The same applies to pupil-teacher ratios:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > summary(Boston$ptratio)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
   12.60   17.40   19.05   18.46   20.20   22.00
-    \end{verbatim}
+    \end{verbatim}\normalsize
     \item[(e)]
     We have the following:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > sum(Boston$chas)
 [1] 35
-    \end{verbatim}
+    \end{verbatim}\normalsize
     \item[(f)]
     We have the following:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > median(Boston$ptratio)
 [1] 19.05
-    \end{verbatim}
+    \end{verbatim}\normalsize
     \item[(g)]
     The tract corresponding to observation $i = 399$, for which we have
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > median(Boston$ptratio)
 [1] 19.05
-    \end{verbatim}
+    \end{verbatim}\normalsize
     For that census tract, we have the following data:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > Boston[399,]
        crim zn indus chas   nox    rm age    dis rad tax ptratio lstat medv
 399 38.3518  0  18.1    0 0.693 5.453 100 1.4896  24 666    20.2 30.59    5
-    \end{verbatim}
+    \end{verbatim}\normalsize
     We can see that the \verb|crim| variable is far higher than the median 
     value of 3.61352, and is also in the higher range for the variables
     \verb|tax| and \verb|ptratio| for which the range was determined in (d).
@@ -123,15 +123,15 @@ Format:
     \item[(h)]
     We have the following code to find the number of census tracts which
     average more than 7 and 8 rooms per dwelling:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > sum(Boston$rm > 7)
 [1] 64
 > sum(Boston$rm > 8)
 [1] 13
-    \end{verbatim}
+    \end{verbatim}\normalsize
     We have the following summary of all census tracts averaging more than 8
     rooms:
-    \begin{verbatim}
+    \scriptsize\begin{verbatim}
 > summary(Boston[Boston$rm > 8, ])
       crim               zn            indus             chas
  Min.   :0.02009   Min.   : 0.00   Min.   : 2.680   Min.   :0.0000
@@ -154,7 +154,7 @@ Format:
  Mean   : 7.462   Mean   :325.1   Mean   :16.36   Mean   :4.31   Mean   :44.2
  3rd Qu.: 8.000   3rd Qu.:307.0   3rd Qu.:17.40   3rd Qu.:5.12   3rd Qu.:50.0
  Max.   :24.000   Max.   :666.0   Max.   :20.20   Max.   :7.44   Max.   :50.0
-    \end{verbatim}
+    \end{verbatim}\normalsize
     From the above summary, it becomes clear that census tracts with a large 
     average number of rooms per dwelling have correspondingly low crime rates,
     relatively high tax rates, and relatively high pupil-teacher ratios.
