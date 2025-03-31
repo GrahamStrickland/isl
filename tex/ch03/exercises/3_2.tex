@@ -1,0 +1,21 @@
+% Exercise 3.2
+
+For the \textit{K-nearest neighbours regression} (KNN regession), we are given a value
+for $K$ and a prediction point $x_0$ and we first identify the $K$ training observations
+that are closest to $x_0$. Then we estimate $f(x_0)$ using the average of all training
+responses in this set ($\mathcal{N}_0$), using
+\[
+    \hat{f}(x_0) = \frac{1}{K}\sum_{x_i \in \mathcal{N}_0}{y_i}.
+\]
+
+The \textit{K-nearest neighbours} (KNN) classifier follows the same method, but instead
+of estimating $f(x_0)$ using an average, we estimate the conditional probability for
+class $j$ as the fraction of points in $\mathcal{N}_0$ whose response values equal $j$:
+\[
+    \text{Pr}(Y = j \vert X = x_0) = \frac{1}{K} \sum_{i \in \mathcal{N}_0} I(y_i = j).
+\]
+Then we classify the test observation $x_0$ to the class with the largest such 
+probability.
+
+Thus KNN regression estimates a function for prediction, while the KNN classifier method
+classifies an observation.
