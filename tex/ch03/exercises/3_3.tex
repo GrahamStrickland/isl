@@ -1,0 +1,32 @@
+% Exercise 3.3
+
+\begin{itemize}
+    \item[(a)]
+        Since $\hat{\beta}_1 = 20$, $\hat{\beta}_2 = 0.07$, and $\hat{\beta}_3 = 35$,
+        we can conclude that IQ has little effect on starting salary by itself, while 
+        GPA and level have significant effects. The interaction term between GPA and 
+        level is given by $\hat{\beta}_5 = -10$, so that we can see a significant
+        negative correlation between GPA and level, while $\hat{\beta}_4 = 0.01$ shows
+        that the interaction between IP and GPA does not have a significant effect.
+        Thus answer iv. is correct, since level will be a strong predictor, but GPA
+        interacting with level will bring down the response if GPA is not high enough.
+    \item[(b)]
+        For a college graduate with IQ of 110 and a GPA of 4.0, we have the following
+        \begin{equation*}
+            \begin{split}
+                \hat{y} &= \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + 
+                    \hat{\beta}_3 x_3 + \hat{\beta}_4 x_4 + \hat{\beta}_5 x_5 \\
+                        &= 50 + 20 x_1 + 0.07x_2 + 35x_3 + 0.01x_4 - 10x_5 \\
+                        &= 50 + 20(4.0) + 0.07(110) + 35(1) + 0.01(4.0 \cdot 110) 
+                    - 10(4.0) \\
+                        &\approx 137.1, 
+            \end{split} 
+        \end{equation*}
+        so that the student is expected to earn a salary of \$137 100 per year.
+    \item[(c)]
+        False, we would need to perform statistical tests in order to evaluate that
+        the interaction terms have little effect, since we would then be able to
+        compare $p$-values and standard errors. Thus our answer in (a) is only
+        a guess using relative sizes, but we cannot be entirely sure that this 
+        provides the full picture without the required data.
+\end{itemize}
