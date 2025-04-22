@@ -5,7 +5,18 @@
     \begin{equation*}
         \begin{split}
             \hat{y}_i &= x_i \hat{\beta} \\
-                      &= \frac{x_i \sum_{i=1}^{n} x_i y_i}{\sum_{i'=1}^{n} x_{i'}^{2}}
+                      &= \frac{x_i \sum_{i'=1}^{n} x_{i'} y_{i'}}{\sum_{i'=1}^{n} 
+                          x_{i'}^{2}} \\
+                      &= \sum_{i'=1}^n \Biggl(\frac{x_i x_{i'} y_{i'}}
+                          {\sum_{i'=1}^{n} x_{i'}^{2}} \Biggr) \\
+                      &= \sum_{i'=1}^n \Biggl(\frac{x_i x_{i'}}
+                          {\sum_{i'=1}^{n} x_{i'}^{2}} y_{i'}\Biggr) \\
+                      &= \sum_{i'=1}^n a_{i'} y_{i'},
         \end{split}
     \end{equation*}
+    where
+    \[
+        a_{i'} = \frac{x_i x_{i'}}{\sum_{i'=1}^{n} x_{i'}^{2}},
+    \]
+    for fixed $i$ and variable $i'$.
 \end{proof}
