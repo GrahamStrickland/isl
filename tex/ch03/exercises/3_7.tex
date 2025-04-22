@@ -1,0 +1,24 @@
+% Exercise 3.7
+
+\begin{proof}
+    If we assume $\bar{x} = \bar{y} = 0$, then the simple linear regression of
+    $Y$ onto $X$ is given by
+    \[
+        \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x.
+    \]
+    Now we have
+    \begin{equation*}
+        \begin{split}
+            R^2 &= \frac{\text{TSS} - \text{RSS}}{\text{TSS}} \\
+                &= \frac{\sum_{i=1}^{n}{(y_i - \bar{y})}^{2} 
+                - \sum_{i=1}^{n}{(y_i - \hat{y_i})}^{2}}
+                {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+                &= \frac{\sum_{i=1}^{n}[{(y_i - \bar{y})}^{2} 
+                - {(y_i - \hat{y_i})}^{2}]}
+                {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+                &= \frac{\sum_{i=1}^{n}[{(y_i - \bar{y})}^{2} 
+                - {(y_i - \bar{y} + \hat{\beta}_1 [\bar{x} - x_i])}^{2}]}
+                {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+        \end{split}
+    \end{equation*}
+\end{proof}
