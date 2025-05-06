@@ -6,7 +6,7 @@
     \[
         \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x.
     \]
-    Now we have
+    Then we have
     \begin{equation*}
         \begin{split}
             R^2 &= \frac{\text{TSS} - \text{RSS}}{\text{TSS}} \\
@@ -25,27 +25,47 @@
                     {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
                 &= \frac{\sum_{i=1}^{n}[{(y_i - \bar{y})}^{2} 
                     - {(y_i - \bar{y} + \hat{\beta}_1 [\bar{x} - x_i])}^{2}]}
-                    {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}}.
+                    {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+                &= \frac{\sum_{i=1}^{n}[-2\hat{\beta}_1(y_i - \bar{y})(\bar{x} - x_i)
+                - \hat{\beta}_1^2{(\bar{x} - x_i)}^{2}]}
+                    {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+                &= \frac{\sum_{i=1}^{n}\hat{\beta}_1(x_i - \bar{x})
+                    [2(y_i - \bar{y}) + \hat{\beta}_1(\bar{x} - x_i)]}
+                    {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+                &= \frac{\hat{\beta}_1\sum_{i=1}^{n}(x_i - \bar{x})
+                    [2(y_i - \bar{y}) + \hat{\beta}_1(\bar{x} - x_i)]}
+                    {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+                &= \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})
+                        \sum_{i=1}^{n}(x_i - \bar{x})[2(y_i - \bar{y}) 
+                        + \hat{\beta}_1(\bar{x} - x_i)]}
+                    {\sum_{i=1}^{n}{(x_i - \bar{x})}^{2}\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+                &= \frac{\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})
+                        \sum_{i=1}^{n}(x_i - \bar{x})[2(y_i - \bar{y}) 
+                        - \hat{\beta}_1(x_i - \bar{x})]}
+                    {\sum_{i=1}^{n}{(x_i - \bar{x})}^{2}\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}}.
         \end{split}
     \end{equation*}
-    Then, 
+
+    Now,
     \begin{equation*}
         \begin{split}
-            \qquad &{(y_i - \bar{y} + \hat{\beta}_1 [\bar{x} - x_i])}^{2} \\
-            = &\, y_i^2 - 2y_i\bar{y} + 2y_i\hat{\beta}_1(\bar{x} - x_i)
-                - \bar{y}^2 - \bar{y}\hat{\beta}_1(\bar{x} - x_i) + \hat{\beta}_1^2
-                {(\bar{x} - x_i)}^{2} \\
-            = &\, {(y_i - \bar{y})}^{2} - 2\bar{y}^2 + \hat{\beta}_1(\bar{x} - x_i)
-                (2y_i - \bar{y}) + \hat{\beta}_1^2{(\bar{x} - x_i)}^{2},
+            \qquad &2(y_i - \bar{y}) - \hat{\beta}_1(x_i - \bar{x})] \\
+            = \, &2(y_i - \bar{y}) - (x_i - \bar{x})
+                \frac{\sum_{j=1}^{n}(x_j - \bar{x})(y_j - \bar{y})}
+                {\sum_{j=1}^{n}{(x_j - \bar{x})}^{2}} \\
+            = \, &\frac{2(y_i - \bar{y})\sum_{j=1}^{n}{(x_j - \bar{x})}^{2} 
+                - (x_i - \bar{x})\sum_{j=1}^{n}(x_j - \bar{x})(y_j - \bar{y})}
+                {\sum_{j=1}^{n}{(x_j - \bar{x})}^{2}} \\    % TODO: Fill in the gap here
+            = \, &(y_i - \bar{y}),
         \end{split}
     \end{equation*}
     so that
     \begin{equation*}
         \begin{split}
-            R^2 &= \frac{\text{TSS} - \text{RSS}}{\text{TSS}} \\
-                &= \frac{\sum_{i=1}^{n}[-2\bar{y}^2 + \hat{\beta}_1(\bar{x} - x_i)
-                (2y_i - \bar{y}) + \hat{\beta}_1^2{(\bar{x} - x_i)}^{2}]}
-                    {\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}}.
+            {\bigl[\text{Cor}(X, Y)\bigr]}^{2} 
+            &= \frac{{\bigl[\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})\bigr]}^{2}}
+            {\sum_{i=1}^{n}{(x_i - \bar{x})}^{2}\sum_{i=1}^{n}{(y_i - \bar{y})}^{2}} \\
+            &= R^2.
         \end{split}
     \end{equation*}
 \end{proof}
