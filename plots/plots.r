@@ -8,3 +8,5 @@ source("ex2_8_c_v.r")
 source("ex2_9_e.r")
 source("ex2_10_b.r")
 source("ex2_10_c.r")
+
+source("ex3_8_b.r")
