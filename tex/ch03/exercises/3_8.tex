@@ -2,7 +2,7 @@
 
 \begin{itemize}
     \item[(a)] We have the following output:
-        \begin{verbatim}
+        \small\begin{verbatim}
 > summary(lm.fit)
 
 Call:
@@ -23,17 +23,45 @@ Residual standard error: 4.906 on 390 degrees of freedom
   (5 observations deleted due to missingness)
 Multiple R-squared:  0.6059,    Adjusted R-squared:  0.6049 
 F-statistic: 599.7 on 1 and 390 DF,  p-value: < 2.2e-16
-        \end{verbatim}
+        \end{verbatim}\normalsize
         \begin{itemize}
             \item[i.] Yes, it is safe to conclude that there is a relationship 
                 between the predictor and the response. We can see that from
                 the $p$-values for \verb|(Intercept)| and \verb|horsepower|,
                 which are very small, i.e., $p < 2.2 \times {10}^{16}$, we may 
                 reject the null hypothesis.
-            \item[ii.] 
-            \item[iii.] 
-            \item[iv.] 
+            \item[ii.] Since we have multiple $R^2$ and adjusted $R^2$ statistics
+                of 0.6059 and 0.6049, respectively, we conclude that close to 2/3
+                of the variability in the response can be explained by the regression.
+                From this, we conclude that the linear regression is a relatively 
+                good fit, and the relationship between the predictor and response
+                is strong.
+            \item[iii.] Since \verb|mpg| decreases as \verb|horsepower| increases
+                along the regression line, we see that the relationship between
+                the predictor and response is negative.
+            \item[iv.] We have the following output:
+                \scriptsize\begin{verbatim}
+> predict(lm.fit, data.frame(horsepower = 98), interval = "confidence")
+       fit      lwr      upr
+1 24.46708 23.97308 24.96108
+                \end{verbatim}\normalsize
+                from which we conclude that the associated 95\% confidence interval
+                is [23.97308, 24.96108] for a predicted value of 24.46708.
+                For the prediction interval, we have
+                \scriptsize\begin{verbatim}
+> predict(lm.fit, data.frame(horsepower = 98), interval = "prediction")
+       fit     lwr      upr
+1 24.46708 14.8094 34.12476
+                \end{verbatim}\normalsize
+                so that the interval is [14.8094, 34.12476] for the same predicted
+                value.
         \end{itemize}
-    \item[(b)] 
+    \item[(b)] In Figure~\ref{fig9}, we have a plot of the response and predictor,
+        as well as the regression line using the \verb|abline()| function.
+    \begin{figure}[!ht]
+        \includegraphics[width=\textwidth, center]{../plots/ex3_8_b.pdf}
+        \caption{Response, predictor, and regression line for a linear regression
+        of \\ \texttt{mpg} on \texttt{horsepower}\label{fig9}}
+    \end{figure}
     \item[(c)] 
 \end{itemize}
