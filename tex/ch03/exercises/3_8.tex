@@ -58,10 +58,22 @@ F-statistic: 599.7 on 1 and 390 DF,  p-value: < 2.2e-16
         \end{itemize}
     \item[(b)] In Figure~\ref{fig9}, we have a plot of the response and predictor,
         as well as the regression line using the \verb|abline()| function.
-    \begin{figure}[!ht]
-        \includegraphics[width=\textwidth, center]{../plots/ex3_8_b.pdf}
-        \caption{Response, predictor, and regression line for a linear regression
-        of \\ \texttt{mpg} on \texttt{horsepower}\label{fig9}}
-    \end{figure}
-    \item[(c)] 
+        \begin{figure}[!ht]
+            \includegraphics[scale=0.6, center]{../plots/ex3_8_b.pdf}
+            \caption{Response, predictor, and regression line for a linear regression
+            of \\ \texttt{mpg} on \texttt{horsepower}\label{fig9}}
+        \end{figure}
+    \item[(c)] In Figure~\ref{fig10}, we have a plot of the default diagnostics
+        for the regression of \verb|mpg| on \verb|horsepower|.
+        \begin{figure}[!ht]
+            \includegraphics[scale=0.6, center]{../plots/ex3_8_c.pdf}
+            \caption{Diagnostic plots for a linear regression of \texttt{mpg} on 
+            \texttt{horsepower}\label{fig10}}
+        \end{figure}
+        We can see from these plots that there are 3 high leverage points corresponding
+        to observations 323, 330, and 334. From the residual plots, we can also see 
+        the data follows a very clear pattern, bringing into question the conclusions
+        of 3.8(a). From this we may conclude that there are some problems with applying
+        a linear model to this data.
+        
 \end{itemize}
