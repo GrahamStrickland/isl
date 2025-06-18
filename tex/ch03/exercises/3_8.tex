@@ -3,6 +3,7 @@
 \begin{itemize}
     \item[(a)] We have the following output:
         \small\begin{verbatim}
+> lm.fit <- lm(mpg ~ horsepower)
 > summary(lm.fit)
 
 Call:
@@ -20,7 +21,6 @@ horsepower  -0.157845   0.006446  -24.49   <2e-16 ***
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 4.906 on 390 degrees of freedom
-  (5 observations deleted due to missingness)
 Multiple R-squared:  0.6059,    Adjusted R-squared:  0.6049 
 F-statistic: 599.7 on 1 and 390 DF,  p-value: < 2.2e-16
         \end{verbatim}\normalsize
@@ -28,7 +28,7 @@ F-statistic: 599.7 on 1 and 390 DF,  p-value: < 2.2e-16
             \item[i.] Yes, it is safe to conclude that there is a relationship 
                 between the predictor and the response. We can see that from
                 the $p$-values for \verb|(Intercept)| and \verb|horsepower|,
-                which are very small, i.e., $p < 2.2 \times {10}^{16}$, we may 
+                which are very small, i.e., $p < 2.2 \times {10}^{-16}$, we may 
                 reject the null hypothesis.
             \item[ii.] Since we have multiple $R^2$ and adjusted $R^2$ statistics
                 of 0.6059 and 0.6049, respectively, we conclude that close to 2/3
