@@ -1,11 +1,11 @@
 % Exercise 3.9
 
 \begin{itemize}
-    \item[(a)] In Figure~\ref{fig11}, we have a scatterplot matrix of all the 
+    \item[(a)] In Figure~\ref{fig3_9scat}, we have a scatterplot matrix of all the 
         \verb|Auto| data.
         \begin{figure}[!ht]
             \includegraphics[scale=0.6, center]{../plots/ex3_9_a.pdf}
-            \caption{Scatterplot matrix of \texttt{Auto} data \label{fig11}}
+            \caption{Scatterplot matrix of \texttt{Auto} data \label{fig3_9scat}}
         \end{figure}
     \item[(b)] We have the following output from using the \verb|cor()| function:
         \scriptsize\begin{verbatim}
@@ -69,7 +69,17 @@ F-statistic: 252.4 on 7 and 384 DF,  p-value: < 2.2e-16
                 date of manufacture is associated with an increase of 0.750773 miles
                 per gallon in fuel consumption by the vehicle.
         \end{itemize}
-    \item[(d)]
+    \item[(d)] In Figure~\ref{fig3_9diag}, we have some dianostic plots of the linear 
+        regression fit for the \verb|Auto| data with \verb|mpg| as response and all 
+        quantitative variables as the predictors.
+        \begin{figure}[!ht]
+            \includegraphics[scale=0.6, center]{../plots/ex3_9_d.pdf}
+            \caption{Diagnostic plots for regression of \texttt{Auto} data \label{fig3_9diag}}
+        \end{figure}
+        We can see that the residuals vs fitted plot shows a well-defined shape to the
+        data that may suggest a non-linear relationship. We can see some high-leverage
+        observations in the residuals vs leverage plot and the scale-location plot, 
+        with observations 323, 327, and 394 standing out most.
     \item[(e)]
     \item[(f)]
 \end{itemize}
