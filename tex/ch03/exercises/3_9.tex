@@ -31,11 +31,11 @@ origin          0.2127458  0.1815277  1.0000000
         \end{verbatim}\normalsize
     \item[(c)] We have the following output from using the \verb|lm()| function:
         \small\begin{verbatim}
-> lm.fit <- lm(mpg ~ ., data = Auto[,1:8])
+> lm.fit <- lm(mpg ~ . - name, data = Auto)
 > summary(lm.fit)
 
 Call:
-lm(formula = mpg ~ ., data = Auto[, 1:8])
+lm(formula = mpg ~ . - name, data = Auto)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
@@ -80,6 +80,97 @@ F-statistic: 252.4 on 7 and 384 DF,  p-value: < 2.2e-16
         data that may suggest a non-linear relationship. We can see some high-leverage
         observations in the residuals vs leverage plot and the scale-location plot, 
         with observations 323, 327, and 394 standing out most.
-    \item[(e)]
-    \item[(f)]
+    \item[(e)] Yes, we can see the interaction between \verb|horsepower| and \verb|year|
+        is statistically equivalent by analysing the following linear regression:
+        \small\begin{verbatim}
+> summary(lm(mpg ~ horsepower * year))
+
+Call:
+lm(formula = mpg ~ horsepower * year)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-12.3492  -2.4509  -0.4557   2.4056  14.4437 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     -1.266e+02  1.212e+01 -10.449   <2e-16 ***
+horsepower       1.046e+00  1.154e-01   9.063   <2e-16 ***
+year             2.192e+00  1.613e-01  13.585   <2e-16 ***
+horsepower:year -1.596e-02  1.562e-03 -10.217   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.901 on 388 degrees of freedom
+Multiple R-squared:  0.7522,    Adjusted R-squared:  0.7503 
+F-statis$tic: 392.5 on 3 and 388 DF,  p-value: < 2.2e-16
+            
+        \end{verbatim}\normalsize
+        All $p$-values are less than $2 \times 10^{-16}$ and we have $R^2$ statistics
+        both around 3/4 compared with the values around 2/3 for linear regression 
+        of \verb|mpg| on \verb|horsepower| and \verb|age| without an interaction term,
+        which can be seen in the following linear regression summary:
+        \small\begin{verbatim}
+> summary(lm(mpg ~ horsepower + year))
+
+Call:
+lm(formula = mpg ~ horsepower + year)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-12.0768  -3.0783  -0.4308   2.5884  15.3153 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -12.739166   5.349027  -2.382   0.0177 *  
+horsepower   -0.131654   0.006341 -20.761   <2e-16 ***
+year          0.657268   0.066262   9.919   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.388 on 389 degrees of freedom
+Multiple R-squared:  0.6855,    Adjusted R-squared:  0.6839 
+F-statistic: 423.9 on 2 and 389 DF,  p-value: < 2.2e-16
+        \end{verbatim}\normalsize
+    \item[(f)] We can see from the following comparison of linear regression of
+        \verb|mpg| on $\verb|horsepower|^2$, $\sqrt{\verb|horsepower|}$, and
+        $\log{(\verb|horsepower|)}$ that the $\verb|horsepower|^2$ term provides the
+        superior model, since it has the highest $F$-statistic (much greater than
+        1), indicating the lack of evidence for the null hypothesis.
+        \small\begin{verbatim}
+> lm.fit <- lm(mpg ~ horsepower)
+> lm.fit2 <- lm(mpg ~ horsepower + I(horsepower^2))
+> anova(lm.fit, lm.fit2)
+Analysis of Variance Table
+
+Model 1: mpg ~ horsepower
+Model 2: mpg ~ horsepower + I(horsepower^2)
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
+1    390 9385.9                                  
+2    389 7442.0  1    1943.9 101.61 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> lm.fit2 <- lm(mpg ~ horsepower + I(sqrt(horsepower)))
+> anova(lm.fit, lm.fit2)
+Analysis of Variance Table
+
+Model 1: mpg ~ horsepower
+Model 2: mpg ~ horsepower + I(sqrt(horsepower))
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
+1    390 9385.9                                  
+2    389 7502.2  1    1883.7 97.672 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> lm.fit2 <- lm(mpg ~ horsepower + I(log(horsepower)))
+> anova(lm.fit, lm.fit2)
+Analysis of Variance Table
+
+Model 1: mpg ~ horsepower
+Model 2: mpg ~ horsepower + I(log(horsepower))
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
+1    390 9385.9                                  
+2    389 7581.2  1    1804.7 92.601 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+        \end{verbatim}\normalsize
 \end{itemize}

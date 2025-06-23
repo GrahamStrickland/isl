@@ -3,7 +3,7 @@
 Auto <- read.table("../datasets/Auto.data", header = T, na.strings = "?", stringsAsFactors = T)
 attach(Auto)
 
-lm.fit <- lm(mpg ~ ., data = Auto[, 1:8])
+lm.fit <- lm(mpg ~ . - name, data = Auto)
 
 pdf("ex3_9_d.pdf")
 par(mfrow = c(2, 2))
