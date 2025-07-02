@@ -1,0 +1,77 @@
+% Exercise 3.10
+
+\begin{itemize}
+    \item[(a)] We have the following output from a multiple regression of \verb|Sales|
+        on \verb|Price|, \verb|Urban|, and \verb|US|:
+        \small\begin{verbatim}
+> Carseats <- read.csv(
+    "../datasets/Carseats.csv", header = T, 
+    na.strings = "?", stringsAsFactors = T
+  )
+> lm.fit <- lm(Sales ~ Price + Urban + US, data = Carseats)
+> summary(lm.fit)
+
+Call:
+lm(formula = Sales ~ Price + Urban + US, data = Carseats)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.9206 -1.6220 -0.0564  1.5786  7.0581 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 13.043469   0.651012  20.036  < 2e-16 ***
+Price       -0.054459   0.005242 -10.389  < 2e-16 ***
+UrbanYes    -0.021916   0.271650  -0.081    0.936    
+USYes        1.200573   0.259042   4.635 4.86e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.472 on 396 degrees of freedom
+Multiple R-squared:  0.2393,    Adjusted R-squared:  0.2335 
+F-statistic: 41.52 on 3 and 396 DF,  p-value: < 2.2e-16
+        \end{verbatim}\normalsize
+    \item[(b)] The \verb|Price| coefficent indicates that a decrease of \$1 in price
+        results in a sales increase of about 54 carseats. From the qualititative
+        variables \verb|Urban| and \verb|US|, we can see that since \verb|Urban| 
+        has a negative coefficient and \verb|US| a positive coefficient, both
+        corresponding to the dummy variable \verb|Yes|, we can see that a store in
+        an urban area is associated with a slight decrease in sales, while a store 
+        in the US is associated with an increase in sales.
+    \item[(c)] We have the dummy variables 
+        \[
+            x_{i1} = 
+            \begin{cases}
+                1 \quad &\text{if $i$th store is in an urban area} \\
+                0 \quad &\text{if $i$th store is not in an urban area} \\
+            \end{cases}
+        \]
+        and
+        \[
+            x_{i2} = 
+            \begin{cases}
+                1 \quad &\text{if $i$th store is in the US} \\
+                0 \quad &\text{if $i$th store is not in the US} \\
+            \end{cases},
+        \]
+        so that we have the regression model
+        \begin{equation*}
+            \begin{split}
+                y_i &= \beta_0 + \beta_1 x_i + \beta_2 x_{i1} + \beta_3 x_{i2} + \epsilon_i \\
+                &=
+                \begin{cases}
+                    \beta_0 + \beta_1x_i + \beta_2 + \beta_3 + \epsilon_i \quad 
+                        &\text{if $i$th store is urban in the US} \\
+                    \beta_0 + \beta_1x_i + \beta_2 + \epsilon_i \quad 
+                        &\text{if $i$th store is urban not in the US} \\
+                    \beta_0 + \beta_1x_i + \beta_3 + \epsilon_i \quad 
+                        &\text{if $i$th store is not urban in the US} \\
+                    \beta_0 + \beta_1x_i + \epsilon_i \quad 
+                        &\text{if $i$th store is neither urban nor US} \\
+                \end{cases}.
+            \end{split}
+        \end{equation*}
+    \item[(d)] We can reject the null hypothesis for \verb|Price| and \verb|US|, since 
+        the associated $p$-values are less than $2^{-16}$.
+\end{itemize}
+
