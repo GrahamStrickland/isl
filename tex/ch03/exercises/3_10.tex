@@ -116,6 +116,14 @@ USYes        0.69151957  1.70776632
         \[
             f(X) = \beta_0 + \beta_1\verb|Price| + \beta_2\verb|USYes|.
         \]
-    \item[(h)] 
+    \item[(h)] In Figure~\ref{fig3_10diag}, we have a plot of some diagnostics for 
+        the model from (e).
+        \begin{figure}[!ht]
+            \includegraphics[scale=0.6, center]{../plots/ex3_10_h.pdf}
+            \caption{Diagnostic plots for regression of \texttt{Carseats} data 
+                \label{fig3_10diag}}
+        \end{figure}
+        We can see some high-leverage observations in the residuals vs leverage plot 
+        and the scale-location plot, with observations 51, 69, and 377 standing out most.
 \end{itemize}
 

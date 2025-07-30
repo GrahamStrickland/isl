@@ -45,8 +45,13 @@ y5 <- bayes_err(x)
 pdf("ex2_3_a.pdf")
 
 plot(x, y1,
-  type = "l", col = "blue", lwd = 1, ylim = c(0, 2.5), xlab = "Flexibility",
-  ylab = "Value", main = "Typical Error Curves"
+  type = "l", 
+  col = "blue", 
+  lwd = 1, 
+  ylim = c(0, 2.5), 
+  xlab = "Flexibility",
+  ylab = "Value", 
+  main = "Typical Error Curves"
 )
 
 lines(x, y2, col = "red", lwd = 1)
