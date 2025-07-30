@@ -30,7 +30,7 @@ year            0.2903161  1.0000000  0.1815277
 origin          0.2127458  0.1815277  1.0000000
         \end{verbatim}\normalsize
     \item[(c)] We have the following output from using the \verb|lm()| function:
-        \small\begin{verbatim}
+        \scriptsize\begin{verbatim}
 > lm.fit <- lm(mpg ~ . - name, data = Auto)
 > summary(lm.fit)
 
@@ -82,7 +82,7 @@ F-statistic: 252.4 on 7 and 384 DF,  p-value: < 2.2e-16
         with observations 323, 327, and 394 standing out most.
     \item[(e)] Yes, we can see the interaction between \verb|horsepower| and \verb|year|
         is statistically equivalent by analysing the following linear regression:
-        \small\begin{verbatim}
+        \scriptsize\begin{verbatim}
 > summary(lm(mpg ~ horsepower * year))
 
 Call:
@@ -110,7 +110,7 @@ F-statis$tic: 392.5 on 3 and 388 DF,  p-value: < 2.2e-16
         both around 3/4 compared with the values around 2/3 for linear regression 
         of \verb|mpg| on \verb|horsepower| and \verb|age| without an interaction term,
         which can be seen in the following linear regression summary:
-        \small\begin{verbatim}
+        \scriptsize\begin{verbatim}
 > summary(lm(mpg ~ horsepower + year))
 
 Call:
@@ -137,7 +137,7 @@ F-statistic: 423.9 on 2 and 389 DF,  p-value: < 2.2e-16
         $\log{(\verb|horsepower|)}$ that the $\verb|horsepower|^2$ term provides the
         superior model, since it has the highest $F$-statistic (much greater than
         1), indicating the lack of evidence for the null hypothesis.
-        \small\begin{verbatim}
+        \scriptsize\begin{verbatim}
 > lm.fit <- lm(mpg ~ horsepower)
 > lm.fit2 <- lm(mpg ~ horsepower + I(horsepower^2))
 > anova(lm.fit, lm.fit2)

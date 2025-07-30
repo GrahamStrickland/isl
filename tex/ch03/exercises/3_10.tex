@@ -3,7 +3,7 @@
 \begin{itemize}
     \item[(a)] We have the following output from a multiple regression of \verb|Sales|
         on \verb|Price|, \verb|Urban|, and \verb|US|:
-        \small\begin{verbatim}
+        \scriptsize\begin{verbatim}
 > Carseats <- read.csv(
     "../datasets/Carseats.csv", header = T, 
     na.strings = "?", stringsAsFactors = T
@@ -75,7 +75,7 @@ F-statistic: 41.52 on 3 and 396 DF,  p-value: < 2.2e-16
         the associated $p$-values are less than $2^{-16}$.
     \item[(e)] We have the following regression of \verb|Sales| on \verb|Price| and
         \verb|US|:
-        \small\begin{verbatim}
+        \scriptsize\begin{verbatim}
 > lm.fit <- lm(Sales ~ Price + US)
 > summary(lm.fit)
 
@@ -102,7 +102,7 @@ F-statistic: 62.43 on 2 and 397 DF,  p-value: < 2.2e-16
         have a relatively high $F$-statistic and low $p$-values, but the model 
         in (e) is improved by omitting \verb|Urban| as a predictor.
     \item[(g)] We have the following:
-        \small\begin{verbatim}
+        \scriptsize\begin{verbatim}
 > confint(lm.fit)
                   2.5 %      97.5 %
 (Intercept) 11.79032020 14.27126531
@@ -116,5 +116,6 @@ USYes        0.69151957  1.70776632
         \[
             f(X) = \beta_0 + \beta_1\verb|Price| + \beta_2\verb|USYes|.
         \]
+    \item[(h)] 
 \end{itemize}
 
