@@ -76,5 +76,58 @@ F-statistic: 350.7 on 1 and 99 DF,  p-value: < 2.2e-16
         identical.
     \item[(c)] (a) is the inverse of the model in (b), ignoring the error term
         $\varepsilon$.
-    \item[(d)] 
+    \item[(d)]
+        \begin{proof}
+            We have the $t$-statistic for $H_0 : \beta = 0$ given by
+            \begin{equation*}
+                \begin{split}
+                    \frac{\hat{\beta}}{\text{SE}(\hat{\beta})}
+                    &= \frac{\hat{\beta}}{\sqrt{
+                        \frac{\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2}
+                        {(n - 1)\sum_{i'=1}^n x_{i'}^2}
+                    }} \\
+                    &= \frac{\sum_{i=1}^n x_i y_i}{
+                        \sum_{i'=1}^n x_{i'}^2
+                        \sqrt{\frac{\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2}
+                            {(n - 1)\sum_{i'=1}^n x_{i'}^2}
+                        }} \\
+                    &= \frac{
+                            \sum_{i=1}^n x_i y_i
+                            \sqrt{(n - 1)\sum_{i'=1}^n x_{i'}^2}
+                        }{
+                            \sum_{i'=1}^n x_{i'}^2
+                            \sqrt{\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2}
+                        } \\
+                    &= \frac{
+                            \sum_{i=1}^n x_i y_i
+                            (\sqrt{n - 1})\sqrt{\sum_{i'=1}^n x_{i'}^2}
+                        }{
+                            \sum_{i'=1}^n x_{i'}^2
+                            \sqrt{\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2}
+                        } \\
+                    &= \frac{(\sqrt{n - 1})\sum_{i=1}^n x_i y_i}
+                        {
+                            \sqrt{\sum_{i'=1}^n x_{i'}^2}
+                            \sqrt{\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2}
+                        } \\
+                    &= \frac{(\sqrt{n - 1})\sum_{i=1}^n x_i y_i}
+                        {
+                            \sqrt{\bigl(\sum_{i'=1}^n x_{i'}^2\bigr)
+                            \Bigl[\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2}\Bigr]
+                        }.
+                \end{split}
+            \end{equation*}
+            Now, we have
+            \begin{equation*}
+                \begin{split}
+                    &\qquad \Biggl(\sum_{i'=1}^n x_{i'}^2\Biggr)
+                    \Biggl[\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2\Biggr] \\
+                    = &\Biggl(\sum_{i'=1}^n x_{i'}^2\Biggr) 
+                    \Biggl[\sum_{i=1}^n {\Biggl(y_i - x_i 
+                        \Biggl[\sum_{i'=1}^n x_{i'}y_{i'}\Biggr] / 
+                        \Biggl[\sum_{i'=1}^n x_{i'}^2\Biggr]\Biggr)}^2
+                    \Biggr]
+                \end{split}
+            \end{equation*}
+        \end{proof}
 \end{itemize}
