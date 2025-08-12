@@ -28,6 +28,7 @@ datasets/*
 # LaTeX files
 *.aux
 *.log
+*.out
 
 # Vimtex files
 *.fdb_latexmk
