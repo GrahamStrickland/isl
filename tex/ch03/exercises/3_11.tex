@@ -153,9 +153,15 @@ F-statistic: 350.7 on 1 and 99 DF,  p-value: < 2.2e-16
             so that
             \begin{equation*}
                 \begin{split}
-                    &\qquad \Biggl(\sum_{i'=1}^n x_{i'}^2\Biggr)
+                    \qquad &\Biggl(\sum_{i'=1}^n x_{i'}^2\Biggr)
                     \Biggl[\sum_{i=1}^n {(y_i - x_i\hat{\beta})}^2\Biggr] \\
-                    = &\Biggl(\sum_{i=1}^n x_i^2\Biggr)
+                    = &\, \Biggl(\sum_{i'=1}^n x_{i'}^2\Biggr)
+                    \Biggl(\sum_{i=1}^n y_i^2 - \sum_{i=1}^n {(x_i\hat{\beta})}^2\Biggr) \\
+                    = &\, \Biggl(\sum_{i'=1}^n x_{i'}^2\Biggr)
+                    \Biggl(\sum_{i'=1}^n y_{i'}^2 \Biggr) 
+                    - \Biggl(\sum_{i'=1}^n x_{i'}^2\Biggr)
+                    \Biggl(\sum_{i=1}^n {(x_i\hat{\beta})}^2\Biggr) \\
+                    = &\, \Biggl(\sum_{i=1}^n x_i^2\Biggr)
                     \Biggl(\sum_{i'=1}^n y_{i'}^2 \Biggr)
                     - {\Biggl(\sum_{i'=1}^n x_{i'}y_{i'}\Biggr)}^2.
                 \end{split}
