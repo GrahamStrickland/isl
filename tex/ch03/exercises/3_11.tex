@@ -173,4 +173,58 @@ F-statistic: 350.7 on 1 and 99 DF,  p-value: < 2.2e-16
                 \end{split}
             \end{equation*}
         \end{proof}
+    \item[(e)] The $t$-statistic for the regression of \verb|y| onto \verb|x| is
+        the same as the $t$-statistic for the regression of \verb|x| onto \verb|y|,
+        since the expression in (d) is symmetric with respect to \verb|x| and 
+        \verb|y|.
+    \item[(f)] We demonstrate using the following \verb|R| code:
+        \scriptsize\begin{verbatim}
+> set.seed(1)
+> x <- rnorm(100)
+> y <- 2 * x + rnorm(100)
+> lm.fit <- lm(y ~ x)
+> summary(lm.fit)
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.8768 -0.6138 -0.1395  0.5394  2.3462 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.03769    0.09699  -0.389    0.698    
+x            1.99894    0.10773  18.556   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9628 on 98 degrees of freedom
+Multiple R-squared:  0.7784,    Adjusted R-squared:  0.7762 
+F-statistic: 344.3 on 1 and 98 DF,  p-value: < 2.2e-16
+
+> lm.fit <- lm(x ~ y)
+> summary(lm.fit)
+
+Call:
+lm(formula = x ~ y)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.90848 -0.28101  0.06274  0.24570  0.85736 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.03880    0.04266    0.91    0.365    
+y            0.38942    0.02099   18.56   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4249 on 98 degrees of freedom
+Multiple R-squared:  0.7784,    Adjusted R-squared:  0.7762 
+F-statistic: 344.3 on 1 and 98 DF,  p-value: < 2.2e-16
+        \end{verbatim}\normalsize
+        We can see that the $t$-statistic given by 18.556 for the regression of \verb|y| 
+        onto \verb|x| is approximately the same as the $t$-statistic given by 18.56 of 
+        \verb|x| onto \verb|y|.
 \end{itemize}
