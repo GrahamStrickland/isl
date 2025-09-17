@@ -11,5 +11,98 @@
             \hat{\beta} = \Biggl(\sum_{i = 1}^n x_i y_i \Biggr) / 
             \Biggl(\sum_{i' = 1}^n x_{i'}^2 \Biggr).
         \]
-    \item[(b)] 
+    \item[(b)] We use the same commands as in 3.11 to produce the following \verb|R|
+        example:
+        \scriptsize\begin{verbatim}
+> x <- rnorm(100)
+> y <- 2 * x + rnorm(100)
+> lm.fit <- lm(y ~ x + 0)
+> summary(lm.fit)
+
+Call:
+lm(formula = y ~ x + 0)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.69463 -0.51184  0.03249  0.72865  1.89998 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+x  2.10757    0.09585   21.99   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9868 on 99 degrees of freedom
+Multiple R-squared:   0.83,     Adjusted R-squared:  0.8283 
+F-statistic: 483.5 on 1 and 99 DF,  p-value: < 2.2e-16
+
+> lm.fit <- lm(x ~ y + 0)
+> summary(lm.fit)
+
+Call:
+lm(formula = x ~ y + 0)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.13668 -0.35292 -0.02919  0.20931  1.22288 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+y  0.39384    0.01791   21.99   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4266 on 99 degrees of freedom
+Multiple R-squared:   0.83,     Adjusted R-squared:  0.8283 
+F-statistic: 483.5 on 1 and 99 DF,  p-value: < 2.2e-16
+        \end{verbatim}\normalsize
+        Clearly the coefficient estimate for $\hat{\beta}$ is not the same for both cases.
+    \item[(c)] We use a similar process to output an example where the sum of squares
+        of \verb|Y| is approximately equal to that of \verb|X|, so that we have the
+        following:
+        \scriptsize\begin{verbatim}
+> x <- rnorm(100)
+> y <- x + rnorm(100, 0, 0.125)
+> lm.fit <- lm(y ~ x + 0)
+> summary(lm.fit)
+
+Call:
+lm(formula = y ~ x + 0)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.36241 -0.07928  0.00452  0.08739  0.28383 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+x  1.02416    0.01193   85.84   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1292 on 99 degrees of freedom
+Multiple R-squared:  0.9867,    Adjusted R-squared:  0.9866 
+F-statistic:  7369 on 1 and 99 DF,  p-value: < 2.2e-16
+
+> lm.fit <- lm(x ~ y + 0)
+> summary(lm.fit)
+
+Call:
+lm(formula = x ~ y + 0)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.27755 -0.09070  0.00535  0.07533  0.34247 
+
+Coefficients:
+  Estimate Std. Error t value Pr(>|t|)    
+y  0.96347    0.01122   85.84   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1253 on 99 degrees of freedom
+Multiple R-squared:  0.9867,    Adjusted R-squared:  0.9866 
+F-statistic:  7369 on 1 and 99 DF,  p-value: < 2.2e-16
+        \end{verbatim}\normalsize
+        While the coefficient estimates for $\hat{\beta}$ are not the
+        same, they are much closer than in (b).
 \end{itemize}
