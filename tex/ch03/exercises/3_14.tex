@@ -1,0 +1,113 @@
+% Exercise 3.14
+
+\begin{itemize}
+    \item[(a)] The form of the linear model is given by
+        \begin{equation*}
+            \begin{split}
+                Y &= 2 + 2X_1 + 0.3X_2 + \varepsilon_1 \\
+                  &= 2 + 2X_1 + 0.3\biggl(0.5X_1 + \frac{\varepsilon_2}{10}\biggr)
+                      + \varepsilon_1 \\
+                  &= 2 + 2X_1 + 0.15X_1 + 0.03\varepsilon_2 + \varepsilon_1 \\
+                  &= 2 + 2.15X_1 + \varepsilon_3,
+            \end{split}
+        \end{equation*}
+        for some $\varepsilon_3 = \varepsilon_1 + 0.03\varepsilon_2$, which is simply
+        an error term. The regression coefficients are $\beta_0 = 2$, $\beta_1 = 2$,
+        and $\beta_2 = 0.03$.
+    \item[(b)] From (a), we see that $X_2 = 0.5X_1 + \varepsilon_2/10$, so that the
+        variables show some correlation. In Figure~\ref{fig3_14scat}, we see a 
+        scatterplot displaying the relationship between the variables.
+        \begin{figure}[!ht]
+            \includegraphics[width=\textwidth, center]{../plots/ex3_14_b.pdf}
+            \caption{Scatterplot of $X_1$ and $X_2$ \label{fig3_14scat}}
+        \end{figure}
+    \item[(c)] Using the given model, we have the following results for the least
+        squares regression prediction of \verb|y| using \verb|x1| and \verb|x2|:
+        \scriptsize\begin{verbatim}
+> lm.fit <- lm(y ~ x1 + x2)
+> summary(lm.fit)
+
+Call:
+lm(formula = y ~ x1 + x2)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.8311 -0.7273 -0.0537  0.6338  2.3359 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   2.1305     0.2319   9.188 7.61e-15 ***
+x1            1.4396     0.7212   1.996   0.0487 *  
+x2            1.0097     1.1337   0.891   0.3754    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.056 on 97 degrees of freedom
+Multiple R-squared:  0.2088,    Adjusted R-squared:  0.1925 
+F-statistic:  12.8 on 2 and 97 DF,  p-value: 1.164e-05
+        \end{verbatim}\normalsize
+        The regression predicts values of $\hat{\beta}_0 = 2.1305$, 
+        $\hat{\beta}_1 = 1.4396$, and $\hat{\beta}_2 = 1.0097$, but the $p$-values for
+        each variable are given by $7.61\times {10}^{-15}$, 0.0487, and 0.3754,
+        respectively. Thus it would not be fair to reject the null hypothesis 
+        $H_0 : \beta_1 = 0$ or $H_0 : \beta_2 = 0$, since the least squares regression
+        does not give us enough certainty about the estimates to conclude anything for
+        these two coefficients.
+    \item[(d)] We have the following least squares regression for predicting \verb|y| 
+        from \verb|x1| alone:
+        \scriptsize\begin{verbatim}
+> lm.fit <- lm(y ~ x1)
+> summary(lm.fit)
+
+Call:
+lm(formula = y ~ x1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.89495 -0.66874 -0.07785  0.59221  2.45560 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   2.1124     0.2307   9.155 8.27e-15 ***
+x1            1.9759     0.3963   4.986 2.66e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.055 on 98 degrees of freedom
+Multiple R-squared:  0.2024,    Adjusted R-squared:  0.1942 
+F-statistic: 24.86 on 1 and 98 DF,  p-value: 2.661e-06
+        \end{verbatim}\normalsize
+        In this case, we have much a smaller $p$-value of $2.66 \times {10}^{-6}$ 
+        for the coefficient estimate $\hat{\beta}_1 = 1.9759$, so we may reject the 
+        null hypothesis $H_0 : \beta_1 = 0$.
+    \item[(e)]We have the following least squares regression for predicting \verb|y| 
+        from \verb|x2| alone:
+        \scriptsize\begin{verbatim}
+> lm.fit <- lm(y ~ x2)
+> summary(lm.fit)
+
+Call:
+lm(formula = y ~ x2)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.62687 -0.75156 -0.03598  0.72383  2.44890 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   2.3899     0.1949   12.26  < 2e-16 ***
+x2            2.8996     0.6330    4.58 1.37e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.072 on 98 degrees of freedom
+Multiple R-squared:  0.1763,    Adjusted R-squared:  0.1679 
+F-statistic: 20.98 on 1 and 98 DF,  p-value: 1.366e-05
+        \end{verbatim}\normalsize
+        In this case, we also have much a smaller $p$-value of $1.37 \times {10}^{-5}$ 
+        for the coefficient estimate $\hat{\beta}_2 = 2.8996$, so we may reject the null 
+        hypothesis $H_0 : \beta_2 = 0$.
+    \item[(f)] No, these results do not contradict eachother, since we have two collinear
+        variables, so measuring the individual effect of either \verb|x1| or \verb|x2| on
+        \verb|y| alone will not yield conclusive results.
+\end{itemize}
