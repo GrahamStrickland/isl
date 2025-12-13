@@ -110,4 +110,27 @@ F-statistic: 20.98 on 1 and 98 DF,  p-value: 1.366e-05
     \item[(f)] No, these results do not contradict eachother, since we have two collinear
         variables, so measuring the individual effect of either \verb|x1| or \verb|x2| on
         \verb|y| alone will not yield conclusive results.
+    \item[(g)] In Figures~\ref{fig3_14resi} to~\ref{fig3_14resiii}, we have diagnostic 
+        plots for each of the three models in (c)-(e). We can see clearly in 
+        Figure~\ref{fig3_14resi} that the new observation is not an outlier, but is
+        clearly a high-leverage point.
+
+        In Figure~~\ref{fig3_14resii}, it is an outlier but not a high-leverage point, 
+        and in Figure~\ref{fig3_14resiii} it is a high-leverage point but not an outlier.
+        
+        These judgements are a reflection of the location of the 101st observation in 
+        each of the diagnostic plots.
+
+        \begin{figure}[!ht]
+            \includegraphics[width=\textwidth, center]{../plots/ex3_14_g_i.pdf}
+            \caption{Diagnostic plots for model from  3.14.(c) \label{fig3_14resi}}
+        \end{figure}
+        \begin{figure}[!ht]
+            \includegraphics[width=\textwidth, center]{../plots/ex3_14_g_ii.pdf}
+            \caption{Diagnostic plots for model from  3.14.(d) \label{fig3_14resii}}
+        \end{figure}
+        \begin{figure}[!ht]
+            \includegraphics[width=\textwidth, center]{../plots/ex3_14_g_iii.pdf}
+            \caption{Diagnostic plots for model from  3.14.(e) \label{fig3_14resiii}}
+        \end{figure}
 \end{itemize}
