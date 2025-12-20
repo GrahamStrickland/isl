@@ -1,15 +1,17 @@
 % Exercise 2.3
 
 \begin{itemize}
-    \item[(a)] We have an R plot of various error curves in Figure~\ref{fig2_3err}.
+  \item[(a)] We have an R plot of various error curves in
+    Figure~\ref{fig2_3err}.
 
     \begin{figure}[!ht]
-        \includegraphics[scale=0.6, center]{../plots/ex2_3_a.pdf}
-        \caption{Typical bias, variance, training error, test error, and Bayes error 
-            \label{fig2_3err}}
+      \includegraphics[scale=0.6, center]{../plots/ex2_3_a.pdf}
+      \caption{Typical bias, variance, training error, test error,
+        and Bayes error
+      \label{fig2_3err}}
     \end{figure}
-     
-    Arbitrary polynomials of the appropriate degree were used to generate these 
+
+    Arbitrary polynomials of the appropriate degree were used to generate these
     plots, since they are approximations, using the following script:
     \scriptsize\begin{verbatim}
 # Exercise 2.3(a) - Plots of error curves
@@ -45,12 +47,12 @@ y5 <- bayes_err(x)
 pdf("ex2_3_a.pdf")
 
 plot(x, y1,
-  type = "l", 
-  col = "blue", 
-  lwd = 1, 
-  ylim = c(0, 2.5), 
+  type = "l",
+  col = "blue",
+  lwd = 1,
+  ylim = c(0, 2.5),
   xlab = "Flexibility",
-  ylab = "Value", 
+  ylab = "Value",
   main = "Typical Error Curves"
 )
 
@@ -71,7 +73,9 @@ dev.off()
 
     \end{verbatim}\normalsize
   \item[(b)] We are given that the training error will always be greater than
-  the (squared) bias, and that both will be u-shaped. The variance will always
-  be less than the (squared) bias, while the test error will decrease as the model
-  becomes more flexible. The Bayes error is irreducible, so it remains constant.
+    the (squared) bias, and that both will be u-shaped. The variance will always
+    be less than the (squared) bias, while the test error will
+    decrease as the model
+    becomes more flexible. The Bayes error is irreducible, so it
+    remains constant.
 \end{itemize}

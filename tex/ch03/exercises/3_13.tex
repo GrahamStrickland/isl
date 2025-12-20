@@ -26,8 +26,8 @@
  [91] -0.542520031  1.207867806  1.160402616  0.700213650  1.586833455
  [96]  0.558486426 -1.276592208 -0.573265414 -1.224612615 -0.473400636
         \end{verbatim}\normalsize
-    \item[(b)] We have the following output, where the standard deviation
-        $\sigma = \sqrt{V(\varepsilon)} = \sqrt{0.25} = 0.0625$:
+  \item[(b)] We have the following output, where the standard deviation
+    $\sigma = \sqrt{V(\varepsilon)} = \sqrt{0.25} = 0.0625$:
         \scriptsize\begin{verbatim}
 > eps <- rnorm(100, 0, 0.0625)
 > eps
@@ -53,7 +53,7 @@
  [96] -0.065499026  0.090072357 -0.063490467  0.025748420 -0.023817253
         \end{verbatim}\normalsize
     \item[(c)] We have the following \verb|R| commands to produce the vector
-        \verb|y|:
+    \verb|y|:
         \scriptsize\begin{verbatim}
 > y <- -1.0 + 0.5*x + eps
 > y
@@ -75,18 +75,19 @@
  [91] -1.28232901 -0.37094036 -0.46553295 -0.59799485 -0.28208845 -0.78625581
  [97] -1.54822375 -1.35012317 -1.58655789 -1.26051757
         \end{verbatim}\normalsize
-        The length of \verb|y| is clearly 100 and the values of the 
-        coefficients in this linear model are given by $\beta_0 = -1$
-        and $\beta_1 = 0.5$.
-    \item[(d)]
-        In Figure~\ref{fig3_13scat}, we have a scatter plot of the linear model
-        $Y = -1 + 0.5X + \varepsilon$.
-        \begin{figure}[!ht]
-            \includegraphics[scale=0.6, center]{../plots/ex3_13_d.pdf}
-            \caption{Scatter plot for $Y = -1 + 0.5X + \varepsilon$ \label{fig3_13scat}}
-        \end{figure}
-        The scatter plot is quite clearly linear, which makes sense given the
-        simple linear model used.
+    The length of \verb|y| is clearly 100 and the values of the
+    coefficients in this linear model are given by $\beta_0 = -1$
+    and $\beta_1 = 0.5$.
+  \item[(d)]
+    In Figure~\ref{fig3_13scat}, we have a scatter plot of the linear model
+    $Y = -1 + 0.5X + \varepsilon$.
+    \begin{figure}[!ht]
+      \includegraphics[scale=0.6, center]{../plots/ex3_13_d.pdf}
+      \caption{Scatter plot for $Y = -1 + 0.5X + \varepsilon$
+      \label{fig3_13scat}}
+    \end{figure}
+    The scatter plot is quite clearly linear, which makes sense given the
+    simple linear model used.
     \item[(e)] We have the following \verb|R| output:
         \scriptsize\begin{verbatim}
 > lm.fit <- lm(y ~ x)
@@ -96,32 +97,34 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--0.117303 -0.038360 -0.008719  0.033713  0.146636 
+      Min        1Q    Median        3Q       Max
+-0.117303 -0.038360 -0.008719  0.033713  0.146636
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
+             Estimate Std. Error t value Pr(>|t|)
 (Intercept) -1.002356   0.006062 -165.36   <2e-16 ***
 x            0.499934   0.006733   74.25   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.06017 on 98 degrees of freedom
-Multiple R-squared:  0.9825,    Adjusted R-squared:  0.9824 
+Multiple R-squared:  0.9825,    Adjusted R-squared:  0.9824
 F-statistic:  5513 on 1 and 98 DF,  p-value: < 2.2e-16
         \end{verbatim}\normalsize
-        The coefficients in the linear regression are quite close to the actual values, 
-        i.e., $\hat{\beta}_0 = -1.002356 \approx \beta_0 = -1$ and
-        $\hat{\beta}_1 = 0.499934 \approx \beta_1 = 0.5$. This fits well with the 
-        relatively low $p$-values of $p < 2.2 \times 10^{-16}$.
-    \item[(f)]
-        In Figure~\ref{fig3_13lines}, we have a scatter plot of the linear model
-        with least squares line and population regression line.
-        \begin{figure}[!ht]
-            \includegraphics[scale=0.6, center]{../plots/ex3_13_f.pdf}
-            \caption{Scatter plot with regression lines for $Y = -1 + 0.5X + \varepsilon$ 
-                \label{fig3_13lines}}
-        \end{figure}
+    The coefficients in the linear regression are quite close to the
+    actual values,
+    i.e., $\hat{\beta}_0 = -1.002356 \approx \beta_0 = -1$ and
+    $\hat{\beta}_1 = 0.499934 \approx \beta_1 = 0.5$. This fits well with the
+    relatively low $p$-values of $p < 2.2 \times 10^{-16}$.
+  \item[(f)]
+    In Figure~\ref{fig3_13lines}, we have a scatter plot of the linear model
+    with least squares line and population regression line.
+    \begin{figure}[!ht]
+      \includegraphics[scale=0.6, center]{../plots/ex3_13_f.pdf}
+      \caption{Scatter plot with regression lines for $Y = -1 + 0.5X
+        + \varepsilon$
+      \label{fig3_13lines}}
+    \end{figure}
     \item[(g)] We have the following \verb|R| output:
         \scriptsize\begin{verbatim}
 > lm.fit <- lm(y ~ x + I(x^2))
@@ -131,28 +134,30 @@ Call:
 lm(formula = y ~ x + I(x^2))
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--0.122815 -0.039087 -0.008051  0.036268  0.141875 
+      Min        1Q    Median        3Q       Max
+-0.122815 -0.039087 -0.008051  0.036268  0.141875
 
 Coefficients:
-             Estimate Std. Error  t value Pr(>|t|)    
+             Estimate Std. Error  t value Pr(>|t|)
 (Intercept) -0.996455   0.007353 -135.508   <2e-16 ***
 x            0.501073   0.006749   74.245   <2e-16 ***
-I(x^2)      -0.007433   0.005298   -1.403    0.164    
+I(x^2)      -0.007433   0.005298   -1.403    0.164
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.05988 on 97 degrees of freedom
-Multiple R-squared:  0.9829,    Adjusted R-squared:  0.9825 
+Multiple R-squared:  0.9829,    Adjusted R-squared:  0.9825
 F-statistic:  2785 on 2 and 97 DF,  p-value: < 2.2e-16
         \end{verbatim}\normalsize
-        Given the high $p$-value of 0.164 associated with $\hat{\beta}_2$ in the model
-        $\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X + \hat{\beta}_2X^2$, we see that the
-        quadratic term does not improve the model fit, which is to be expected given
-        the linear relationship of the underlying data.
-    \item[(h)] We have the following result with a lower variance given by
-        $V(\varepsilon) = 0.1$, so that the standard deviation is given by
-        $\sqrt{V(\varepsilon)} = \sqrt{0.1} \approx 0.3162278$:
+    Given the high $p$-value of 0.164 associated with $\hat{\beta}_2$
+    in the model
+    $\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X + \hat{\beta}_2X^2$, we
+    see that the
+    quadratic term does not improve the model fit, which is to be expected given
+    the linear relationship of the underlying data.
+  \item[(h)] We have the following result with a lower variance given by
+    $V(\varepsilon) = 0.1$, so that the standard deviation is given by
+    $\sqrt{V(\varepsilon)} = \sqrt{0.1} \approx 0.3162278$:
         \scriptsize\begin{verbatim}
 > x <- rnorm(100, 0, 1)
 > eps <- rnorm(100, 0, sqrt(0.1))
@@ -164,18 +169,18 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--0.86703 -0.17753 -0.00553  0.21495  0.58452 
+     Min       1Q   Median       3Q      Max
+-0.86703 -0.17753 -0.00553  0.21495  0.58452
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
+            Estimate Std. Error t value Pr(>|t|)
 (Intercept) -0.98468    0.03134  -31.42   <2e-16 ***
 x            0.53359    0.03044   17.53   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.3133 on 98 degrees of freedom
-Multiple R-squared:  0.7582,    Adjusted R-squared:  0.7557 
+Multiple R-squared:  0.7582,    Adjusted R-squared:  0.7557
 F-statistic: 307.3 on 1 and 98 DF,  p-value: < 2.2e-16
 
 > lm.fit <- lm(y ~ x + I(x^2))
@@ -185,30 +190,30 @@ Call:
 lm(formula = y ~ x + I(x^2))
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--0.86688 -0.17493 -0.00672  0.20799  0.61070 
+     Min       1Q   Median       3Q      Max
+-0.86688 -0.17493 -0.00672  0.20799  0.61070
 
 Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
+             Estimate Std. Error t value Pr(>|t|)
 (Intercept) -0.977174   0.037857 -25.812   <2e-16 ***
 x            0.532232   0.030812  17.274   <2e-16 ***
-I(x^2)      -0.007043   0.019735  -0.357    0.722    
+I(x^2)      -0.007043   0.019735  -0.357    0.722
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.3147 on 97 degrees of freedom
-Multiple R-squared:  0.7585,    Adjusted R-squared:  0.7535 
+Multiple R-squared:  0.7585,    Adjusted R-squared:  0.7535
 F-statistic: 152.3 on 2 and 97 DF,  p-value: < 2.2e-16
         \end{verbatim}\normalsize
-        We can see that the result for the linear model is similar in that it
-        $\hat{\beta}_0 = -0.98468 \approx \beta_0 = -1$, 
-        $\hat{\beta}_1 = 0.53359 \approx 0.5$, with corresponding $p$-values
-        $< 2.2 \times {10}^{-16}$. However, the quadratic term improves the
-        model with less noise in the data even less than in (g), since we have
-        a much higher $p$-value of 0.722 for the quadratic term, approximately 
-        4 times that of the model in (g).
-    \item[(i)] Using the same $x$ values but a variance of $V(\varepsilon) = 0.5$,
-        we have the following:
+    We can see that the result for the linear model is similar in that it
+    $\hat{\beta}_0 = -0.98468 \approx \beta_0 = -1$,
+    $\hat{\beta}_1 = 0.53359 \approx 0.5$, with corresponding $p$-values
+    $< 2.2 \times {10}^{-16}$. However, the quadratic term improves the
+    model with less noise in the data even less than in (g), since we have
+    a much higher $p$-value of 0.722 for the quadratic term, approximately
+    4 times that of the model in (g).
+  \item[(i)] Using the same $x$ values but a variance of $V(\varepsilon) = 0.5$,
+    we have the following:
         \scriptsize\begin{verbatim}
 > eps <- rnorm(100, 0, sqrt(0.5))
 > y <- -1.0 + 0.5*x + eps
@@ -219,18 +224,18 @@ Call:
 lm(formula = y ~ x)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--2.05113 -0.48481 -0.05128  0.46397  2.68042 
+     Min       1Q   Median       3Q      Max
+-2.05113 -0.48481 -0.05128  0.46397  2.68042
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
+            Estimate Std. Error t value Pr(>|t|)
 (Intercept) -1.02838    0.08312 -12.372  < 2e-16 ***
 x            0.52375    0.08074   6.487 3.59e-09 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.8309 on 98 degrees of freedom
-Multiple R-squared:  0.3004,    Adjusted R-squared:  0.2933 
+Multiple R-squared:  0.3004,    Adjusted R-squared:  0.2933
 F-statistic: 42.08 on 1 and 98 DF,  p-value: 3.586e-09
 
 > lm.fit <- lm(y ~ x + I(x^2))
@@ -240,41 +245,41 @@ Call:
 lm(formula = y ~ x + I(x^2))
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--2.19697 -0.51801 -0.07021  0.49803  2.54085 
+     Min       1Q   Median       3Q      Max
+-2.19697 -0.51801 -0.07021  0.49803  2.54085
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
+            Estimate Std. Error t value Pr(>|t|)
 (Intercept) -1.08933    0.09986 -10.909  < 2e-16 ***
 x            0.53477    0.08128   6.580  2.4e-09 ***
-I(x^2)       0.05720    0.05206   1.099    0.275    
+I(x^2)       0.05720    0.05206   1.099    0.275
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Residual standard error: 0.83 on 97 degrees of freedom
-Multiple R-squared:  0.309,     Adjusted R-squared:  0.2947 
+Multiple R-squared:  0.309,     Adjusted R-squared:  0.2947
 F-statistic: 21.69 on 2 and 97 DF,  p-value: 1.64e-08
         \end{verbatim}\normalsize
-        In this model with more noise in the data, we can see that the
-        $p$-value for the $\hat{\beta}_1$ term in the linear model has
-        increases significantly to $3.59 \times {10}^{-9}$ and similarly
-        for quadratic model, where it has increased to $2.4 \times {10}^{-9}$ 
-        The quadratic term in the corresponding model, where the $p$-value
-        has decreased to 0.275, also indicates a slightly greater chance
-        of a quadratic relationship in the data, although still not enough
-        to be convincing.
-    \item[(j)] We have the following 95\% confidence intervals for 
-        the same models and variance used in (b), (h), and (i):
-        \begin{center}
-            \begin{tabular}{ r | c | c }
-                \multicolumn{1}{c}{$V(\varepsilon)$} & \multicolumn{1}{c}{$\beta_0$} 
-                                                     & \multicolumn{1}{c}{$\beta_1$}\\ 
-                \hline
-                0.25 & (-1.117991, -0.9253684)  & (0.386896, 0.5739970) \\
-                0.1  & (-1.1309308, -0.9946121) & (0.4222957, 0.5547071) \\
-                0.5  & (-1.149839 -0.8434031)   & (0.243385  0.5410379) \\
-            \end{tabular}
-        \end{center}
-        We can see that the confidence intervals shrink for the lower variance
-        models and expand for the higher variance models, which is to be expected.
+    In this model with more noise in the data, we can see that the
+    $p$-value for the $\hat{\beta}_1$ term in the linear model has
+    increases significantly to $3.59 \times {10}^{-9}$ and similarly
+    for quadratic model, where it has increased to $2.4 \times {10}^{-9}$
+    The quadratic term in the corresponding model, where the $p$-value
+    has decreased to 0.275, also indicates a slightly greater chance
+    of a quadratic relationship in the data, although still not enough
+    to be convincing.
+  \item[(j)] We have the following 95\% confidence intervals for
+    the same models and variance used in (b), (h), and (i):
+    \begin{center}
+      \begin{tabular}{ r | c | c }
+        \multicolumn{1}{c}{$V(\varepsilon)$} & \multicolumn{1}{c}{$\beta_0$}
+        & \multicolumn{1}{c}{$\beta_1$}\\
+        \hline
+        0.25 & (-1.117991, -0.9253684)  & (0.386896, 0.5739970) \\
+        0.1  & (-1.1309308, -0.9946121) & (0.4222957, 0.5547071) \\
+        0.5  & (-1.149839 -0.8434031)   & (0.243385  0.5410379) \\
+      \end{tabular}
+    \end{center}
+    We can see that the confidence intervals shrink for the lower variance
+    models and expand for the higher variance models, which is to be expected.
 \end{itemize}
