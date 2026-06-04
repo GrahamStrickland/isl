@@ -37,3 +37,7 @@ datasets/*
 
 # Plots
 /plots/*.pdf
+
+# Jupyter files
+.ipynb_checkpoints/
+.virtual_documents
