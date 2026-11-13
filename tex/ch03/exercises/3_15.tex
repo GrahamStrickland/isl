@@ -1,0 +1,278 @@
+% Exercise 3.15
+
+\begin{itemize}
+  \item[(a)] We have the following summary details for the least squares regression
+    for the predictor \verb|zn|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 8.435 on 504 degrees of freedom
+Multiple R-squared:  0.04019,   Adjusted R-squared:  0.03828
+F-statistic:  21.1 on 1 and 504 DF,  p-value: 5.506e-06
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|indus|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 7.866 on 504 degrees of freedom
+Multiple R-squared:  0.1653,    Adjusted R-squared:  0.1637
+F-statistic: 99.82 on 1 and 504 DF,  p-value: < 2.2e-16
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|chas|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 8.597 on 504 degrees of freedom
+Multiple R-squared:  0.003124,  Adjusted R-squared:  0.001146
+F-statistic: 1.579 on 1 and 504 DF,  p-value: 0.2094
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|nox|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 7.81 on 504 degrees of freedom
+Multiple R-squared:  0.1772,    Adjusted R-squared:  0.1756
+F-statistic: 108.6 on 1 and 504 DF,  p-value: < 2.2e-16
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|rm|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 8.401 on 504 degrees of freedom
+Multiple R-squared:  0.04807,   Adjusted R-squared:  0.04618
+F-statistic: 25.45 on 1 and 504 DF,  p-value: 6.347e-07
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|age|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 8.057 on 504 degrees of freedom
+Multiple R-squared:  0.1244,    Adjusted R-squared:  0.1227
+F-statistic: 71.62 on 1 and 504 DF,  p-value: 2.855e-16
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|dis|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 7.965 on 504 degrees of freedom
+Multiple R-squared:  0.1441,    Adjusted R-squared:  0.1425
+F-statistic: 84.89 on 1 and 504 DF,  p-value: < 2.2e-16
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|rad|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 6.718 on 504 degrees of freedom
+Multiple R-squared:  0.3913,    Adjusted R-squared:   0.39
+F-statistic: 323.9 on 1 and 504 DF,  p-value: < 2.2e-16
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|tax|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 6.997 on 504 degrees of freedom
+Multiple R-squared:  0.3396,    Adjusted R-squared:  0.3383
+F-statistic: 259.2 on 1 and 504 DF,  p-value: < 2.2e-16
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|ptratio|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 8.24 on 504 degrees of freedom
+Multiple R-squared:  0.08407,   Adjusted R-squared:  0.08225
+F-statistic: 46.26 on 1 and 504 DF,  p-value: 2.943e-11
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|lstat|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 7.664 on 504 degrees of freedom
+Multiple R-squared:  0.2076,    Adjusted R-squared:  0.206
+F-statistic:   132 on 1 and 504 DF,  p-value: < 2.2e-16
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|medv|:
+  \scriptsize\begin{verbatim}
+Residual standard error: 7.934 on 504 degrees of freedom
+Multiple R-squared:  0.1508,    Adjusted R-squared:  0.1491
+F-statistic: 89.49 on 1 and 504 DF,  p-value: < 2.2e-16
+    \end{verbatim}\normalsize
+
+    We can safely rule out the effects of \verb|chas|, since the $p$-value is
+    given by 0.2094, while the most significant association seems to be from
+    \verb|dis|, \verb|rad|, and \verb|medv|, all with 
+    $p < 2.2 \times {10}^{-16}$ and relatively low $F$-statistics.
+
+    In Figure~\ref{fig3_15plot}, we can see these association clearly.
+    \begin{figure}[!ht]
+      \includegraphics[width=\textwidth, center]{../plots/ex3_15_a.pdf}
+      \caption{Plots for models from  3.15.(a) \label{fig3_15plot}}
+    \end{figure}
+  \item[(b)] We have the following least squares regression for predicting
+    \verb|crim| using all of the predictors:
+  \scriptsize\begin{verbatim}
+> lm.fit <- lm(crim ~ ., data = Boston)
+> summary(lm.fit)
+
+Call:
+lm(formula = crim ~ ., data = Boston)
+
+Residuals:
+   Min     1Q Median     3Q    Max
+-8.534 -2.248 -0.348  1.087 73.923
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept) 13.7783938  7.0818258   1.946 0.052271 .
+zn           0.0457100  0.0187903   2.433 0.015344 *
+indus       -0.0583501  0.0836351  -0.698 0.485709
+chas        -0.8253776  1.1833963  -0.697 0.485841
+nox         -9.9575865  5.2898242  -1.882 0.060370 .
+rm           0.6289107  0.6070924   1.036 0.300738
+age         -0.0008483  0.0179482  -0.047 0.962323
+dis         -1.0122467  0.2824676  -3.584 0.000373 ***
+rad          0.6124653  0.0875358   6.997 8.59e-12 ***
+tax         -0.0037756  0.0051723  -0.730 0.465757
+ptratio     -0.3040728  0.1863598  -1.632 0.103393
+lstat        0.1388006  0.0757213   1.833 0.067398 .
+medv        -0.2200564  0.0598240  -3.678 0.000261 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 6.46 on 493 degrees of freedom
+Multiple R-squared:  0.4493,    Adjusted R-squared:  0.4359
+F-statistic: 33.52 on 12 and 493 DF,  p-value: < 2.2e-16
+  \end{verbatim}\normalsize
+    The multiple regression has an $F$-statistic of 33.52 on 12 and 493
+    degrees of freedom, with a $p$-value of $p < 2.2 \times {10}^{-16}$, so
+    that we have strong evidence for rejecting the null hypothesis
+    $H_0 : \beta_1 = \beta_2 = \cdots = \beta_{12} = 0$, i.e., at least one
+    of the predictors is associated with \verb|crim|. Looking at the
+    individual predictors, we can reject the null hypothesis
+    $H_0 : \beta_j = 0$ at the 1\% level for the predictors \verb|dis|
+    ($p = 0.000373$), \verb|rad| ($p = 8.59 \times {10}^{-12}$), and
+    \verb|medv| ($p = 0.000261$). The predictor \verb|zn| is also
+    significant at the 5\% level ($p = 0.0153$), while none of the remaining
+    predictors are significant at the 5\% level.
+  \item[(c)] The results from (a) and (b) both agree on the importance of the
+    predictors \verb|dis|, \verb|rad|, and \verb|medv| in predicting per
+    capita crime rate. The fact that the multiple linear regression and the
+    univariate regressions agree on the predictors provides even strong
+    evidence for rejecting the null hypothesis for these predictors.
+
+    In Figure~\ref{fig3_15coefs}, we plot the univariate regression
+    coefficients from (a) against the multiple regression coefficients
+    from (b).
+    \begin{figure}[!ht]
+      \includegraphics[scale=0.6, center]{../plots/ex3_15_c.pdf}
+      \caption{Univariate vs multiple regression coefficients for 3.15.(c)
+      \label{fig3_15coefs}}
+    \end{figure}
+  \item[(d)] We have the following coefficients for the non-linear least
+    squares regression \verb|lm(crim ~ poly(zn, 3))| for the predictor
+    \verb|zn|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)    3.6135     0.3722   9.709  < 2e-16 ***
+poly(zn, 3)1 -38.7498     8.3722  -4.628  4.7e-06 ***
+poly(zn, 3)2  23.9398     8.3722   2.859  0.00442 **
+poly(zn, 3)3 -10.0719     8.3722  -1.203  0.22954
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|indus|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)
+(Intercept)        3.614      0.330  10.950  < 2e-16 ***
+poly(indus, 3)1   78.591      7.423  10.587  < 2e-16 ***
+poly(indus, 3)2  -24.395      7.423  -3.286  0.00109 **
+poly(indus, 3)3  -54.130      7.423  -7.292  1.2e-12 ***
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|nox|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)     3.6135     0.3216  11.237  < 2e-16 ***
+poly(nox, 3)1  81.3720     7.2336  11.249  < 2e-16 ***
+poly(nox, 3)2 -28.8286     7.2336  -3.985 7.74e-05 ***
+poly(nox, 3)3 -60.3619     7.2336  -8.345 6.96e-16 ***
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|rm|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)    3.6135     0.3703   9.758  < 2e-16 ***
+poly(rm, 3)1 -42.3794     8.3297  -5.088 5.13e-07 ***
+poly(rm, 3)2  26.5768     8.3297   3.191  0.00151 **
+poly(rm, 3)3  -5.5103     8.3297  -0.662  0.50858
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|age|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)     3.6135     0.3485  10.368  < 2e-16 ***
+poly(age, 3)1  68.1820     7.8397   8.697  < 2e-16 ***
+poly(age, 3)2  37.4845     7.8397   4.781 2.29e-06 ***
+poly(age, 3)3  21.3532     7.8397   2.724  0.00668 **
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|dis|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)     3.6135     0.3259  11.087  < 2e-16 ***
+poly(dis, 3)1 -73.3886     7.3315 -10.010  < 2e-16 ***
+poly(dis, 3)2  56.3730     7.3315   7.689 7.87e-14 ***
+poly(dis, 3)3 -42.6219     7.3315  -5.814 1.09e-08 ***
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|rad|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)     3.6135     0.2971  12.164  < 2e-16 ***
+poly(rad, 3)1 120.9074     6.6824  18.093  < 2e-16 ***
+poly(rad, 3)2  17.4923     6.6824   2.618  0.00912 **
+poly(rad, 3)3   4.6985     6.6824   0.703  0.48231
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|tax|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)     3.6135     0.3047  11.860  < 2e-16 ***
+poly(tax, 3)1 112.6458     6.8537  16.436  < 2e-16 ***
+poly(tax, 3)2  32.0873     6.8537   4.682 3.67e-06 ***
+poly(tax, 3)3  -7.9968     6.8537  -1.167    0.244
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|ptratio|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)
+(Intercept)          3.614      0.361  10.008  < 2e-16 ***
+poly(ptratio, 3)1   56.045      8.122   6.901 1.57e-11 ***
+poly(ptratio, 3)2   24.775      8.122   3.050  0.00241 **
+poly(ptratio, 3)3  -22.280      8.122  -2.743  0.00630 **
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|lstat|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+                Estimate Std. Error t value Pr(>|t|)
+(Intercept)       3.6135     0.3392  10.654   <2e-16 ***
+poly(lstat, 3)1  88.0697     7.6294  11.543   <2e-16 ***
+poly(lstat, 3)2  15.8882     7.6294   2.082   0.0378 *
+poly(lstat, 3)3 -11.5740     7.6294  -1.517   0.1299
+  \end{verbatim}\normalsize
+
+    For the predictor \verb|medv|:
+  \scriptsize\begin{verbatim}
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)
+(Intercept)       3.614      0.292  12.374  < 2e-16 ***
+poly(medv, 3)1  -75.058      6.569 -11.426  < 2e-16 ***
+poly(medv, 3)2   88.086      6.569  13.409  < 2e-16 ***
+poly(medv, 3)3  -48.033      6.569  -7.312 1.05e-12 ***
+  \end{verbatim}\normalsize
+
+    A third order polynomial cannot be used for the predictor \verb|chas|
+    with only two possible values (1 = next to the Charles river, 0 = not).
+    In all other cases, the polynomial terms lead to an improvement in the
+    model fit, although in some cases (\verb|lstat|, \verb|tax|,
+    \verb|rad|, \verb|rm|, \verb|zn|), the third order term have
+    significant $p$-values, indicating that a quadratic polynomial would
+    provide a better fit for these cases.
+\end{itemize}
