@@ -1,28 +1,28 @@
 % Exercise 4.4
 \begin{itemize}
-  \item[(a)] Since $X$ is uniformly distributed on $[0, 1]$ and we are always
-    using observations within 10\% of the range of $X$ closest to the test
-    observation, we will use $1/10$ of the available observations to make the
-    prediction, on average.
-  \item[(b)] In this case, we would be using $1/10 \cdot 1/10 = 1/100$ of the
-    available observations to make the prediction.
-  \item[(c)] We would be using $1/{10}^{100}$ of the available observations to
-    make the prediction.
-  \item[(d)] In general, for a uniformly distributed random variable $X$ with
-    $p$ features, where we restrict the number of observations used to a
-    fraction $q$ of the given observations in the range $[0, 1]$ for each
-    feature, we would be restricting our usage to $q^p$ as a fraction of
-    the available observations. Thus, for $q$ relatively small, as $p$ grows
-    larger, the fraction of the observations used shrinks dramatically, so
-    that there are very few training observations ``near'' any given test
-    observation.
-  \item[(e)] If the hypercube has sides of length $l$, then it contains on
-    average a fraction $l^p$ of the training observations, so that we require
-    $l^p = 0.1$, i.e., $l = {0.1}^{1/p}$. Thus the length of each side of the
-    hypercube is $0.1$ for $p = 1$, ${0.1}^{1/2} \approx 0.316$ for $p = 2$,
-    and ${0.1}^{1/100} \approx 0.977$ for $p = 100$. This reflects the problem
-    which we discussed in (d): to contain 10\% of the training observations
-    when $p = 100$, the hypercube must span almost the entire range of each
-    feature, so that the ``nearest'' neighbours are not really near to the
-    test observation at all.
+    \item[(a)] Since $X$ is uniformly distributed on $[0, 1]$ and we are always
+        using observations within 10\% of the range of $X$ closest to the test
+        observation, we will use $1/10$ of the available observations to make the
+        prediction, on average.
+    \item[(b)] In this case, we would be using $1/10 \cdot 1/10 = 1/100$ of the
+        available observations to make the prediction.
+    \item[(c)] We would be using $1/{10}^{100}$ of the available observations to
+        make the prediction.
+    \item[(d)] In general, for a uniformly distributed random variable $X$ with
+        $p$ features, where we restrict the number of observations used to a
+        fraction $q$ of the given observations in the range $[0, 1]$ for each
+        feature, we would be restricting our usage to $q^p$ as a fraction of
+        the available observations. Thus, for $q$ relatively small, as $p$ grows
+        larger, the fraction of the observations used shrinks dramatically, so
+        that there are very few training observations ``near'' any given test
+        observation.
+    \item[(e)] If the hypercube has sides of length $l$, then it contains on
+        average a fraction $l^p$ of the training observations, so that we require
+        $l^p = 0.1$, i.e., $l = {0.1}^{1/p}$. Thus the length of each side of the
+        hypercube is $0.1$ for $p = 1$, ${0.1}^{1/2} \approx 0.316$ for $p = 2$,
+        and ${0.1}^{1/100} \approx 0.977$ for $p = 100$. This reflects the problem
+        which we discussed in (d): to contain 10\% of the training observations
+        when $p = 100$, the hypercube must span almost the entire range of each
+        feature, so that the ``nearest'' neighbours are not really near to the
+        test observation at all.
 \end{itemize}

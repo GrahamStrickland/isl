@@ -1,43 +1,43 @@
 % Exercise 4.2
 If we take the log of (4.17), we have the following:
 \begin{equation*}
-  \begin{split}
-    \log{\bigl(p_k(x)\bigr)} &= \log{\left(\frac{\pi_k \frac{1}{\sqrt{2\pi}\sigma^2}
-          \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}}
-          {\sum_{l=1}^K{\pi_l \frac{1}{\sqrt{2\pi}\sigma^2}
-    \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_l)}^2\right)}}}\right)} \\
-    &= \log{\left(\pi_k \frac{1}{\sqrt{2\pi}\sigma^2}
-    \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}\right)} \\
-    &\quad - \log{\left(\sum_{l=1}^K{\pi_l \frac{1}{\sqrt{2\pi}\sigma^2}
-    \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_l)}^2\right)}}\right)}.
-  \end{split}
+    \begin{split}
+        \log{\bigl(p_k(x)\bigr)} &= \log{\left(\frac{\pi_k \frac{1}{\sqrt{2\pi}\sigma^2}
+                    \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}}
+                    {\sum_{l=1}^K{\pi_l \frac{1}{\sqrt{2\pi}\sigma^2}
+        \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_l)}^2\right)}}}\right)} \\
+        &= \log{\left(\pi_k \frac{1}{\sqrt{2\pi}\sigma^2}
+        \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}\right)} \\
+        &\quad - \log{\left(\sum_{l=1}^K{\pi_l \frac{1}{\sqrt{2\pi}\sigma^2}
+        \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_l)}^2\right)}}\right)}.
+    \end{split}
 \end{equation*}
 Now, the second term does not vary with our choice of class $k$. Thus we are
 looking to assign the observation to the class for which the following is
 largest:
 \begin{equation*}
-  \begin{split}
-    & \log{\left(\pi_k \frac{1}{\sqrt{2\pi}\sigma^2}
-    \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}\right)} \\
-    &= \log{(\pi_k)} + \log{\left(\frac{1}{\sqrt{2\pi}\sigma^2}
-    \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}\right)} \\
-    &= \log{(\pi_k)} + \log{\left(\frac{1}{\sqrt{2\pi}\sigma^2}\right)}
-    - \frac{1}{2\sigma^2}{(x - \mu_k)}^2.
-  \end{split}
+    \begin{split}
+        & \log{\left(\pi_k \frac{1}{\sqrt{2\pi}\sigma^2}
+        \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}\right)} \\
+        &= \log{(\pi_k)} + \log{\left(\frac{1}{\sqrt{2\pi}\sigma^2}
+        \exp{\left(-\frac{1}{2\sigma^2}{(x - \mu_k)}^2\right)}\right)} \\
+        &= \log{(\pi_k)} + \log{\left(\frac{1}{\sqrt{2\pi}\sigma^2}\right)}
+        - \frac{1}{2\sigma^2}{(x - \mu_k)}^2.
+    \end{split}
 \end{equation*}
 Again, the middle term in the above does not vary with our choice of class
 $k$, so that we are looking to maximize the following:
 \begin{equation*}
-  \begin{split}
-    \log{(\pi_k)} - \frac{1}{2\sigma^2}{(x - \mu_k)}^2 &= \log{(\pi_k)}
-    - \frac{1}{2\sigma^2}(x^2 - 2 x \cdot \mu_k + \mu_k^2) \\
-    &= x \cdot \frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2}
-    - \frac{1}{2\sigma^2}x^2 + \log{(\pi_k)}.
-  \end{split}
+    \begin{split}
+        \log{(\pi_k)} - \frac{1}{2\sigma^2}{(x - \mu_k)}^2 &= \log{(\pi_k)}
+        - \frac{1}{2\sigma^2}(x^2 - 2 x \cdot \mu_k + \mu_k^2) \\
+        &= x \cdot \frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2}
+        - \frac{1}{2\sigma^2}x^2 + \log{(\pi_k)}.
+    \end{split}
 \end{equation*}
 Finally, we may neglect the $x^2$ term since it also does not depend upon $k$
 and we conclude that by maximizing (4.17), we are also looking to maximize
 \[
-  x \cdot \frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2} + \log{(\pi_k)}
-  = \delta_k(x).
+    x \cdot \frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2} + \log{(\pi_k)}
+    = \delta_k(x).
 \]

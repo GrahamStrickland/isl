@@ -1,19 +1,19 @@
 % Exercise 4.1
 \begin{proof}
-  We have the following proof of the equivalence of (4.2) and (4.3):
-  \begin{equation*}
-    \begin{split}
-      p(X) &= \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}} \\
-      \Rightarrow \frac{p(X)}{1 - p(X)} &=
-      \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}
-      / \biggl(1 - \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}\biggr) \\
-      &= \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}
-      / \frac{1 + e^{\beta_0 + \beta_1 X} - e^{\beta_0 + \beta_1 X}}
-      {1 + e^{\beta_0 + \beta_1 X}} \\
-      &= \frac{e^{\beta_0 + \beta_1 X}}
-      {1 + e^{\beta_0 + \beta_1 X} - e^{\beta_0 + \beta_1 X}} \\
-      &= \frac{e^{\beta_0 + \beta_1 X}}{1} \\
-      &= e^{\beta_0 + \beta_1 X}.
-    \end{split}
-  \end{equation*}
+    We have the following proof of the equivalence of (4.2) and (4.3):
+    \begin{equation*}
+        \begin{split}
+            p(X) &= \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}} \\
+            \Rightarrow \frac{p(X)}{1 - p(X)} &=
+            \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}
+            / \biggl(1 - \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}\biggr) \\
+            &= \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}}
+            / \frac{1 + e^{\beta_0 + \beta_1 X} - e^{\beta_0 + \beta_1 X}}
+            {1 + e^{\beta_0 + \beta_1 X}} \\
+            &= \frac{e^{\beta_0 + \beta_1 X}}
+            {1 + e^{\beta_0 + \beta_1 X} - e^{\beta_0 + \beta_1 X}} \\
+            &= \frac{e^{\beta_0 + \beta_1 X}}{1} \\
+            &= e^{\beta_0 + \beta_1 X}.
+        \end{split}
+    \end{equation*}
 \end{proof}
