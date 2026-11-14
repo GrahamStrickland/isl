@@ -1,7 +1,7 @@
 % Exercise 3.8
 \begin{itemize}
     \item[(a)] We have the following output:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > lm.fit <- lm(mpg ~ horsepower)
 > summary(lm.fit)
 
@@ -22,7 +22,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 4.906 on 390 degrees of freedom
 Multiple R-squared:  0.6059,    Adjusted R-squared:  0.6049
 F-statistic: 599.7 on 1 and 390 DF,  p-value: < 2.2e-16
-                \end{lstlisting}
+        \end{lstlisting}
         \begin{itemize}
             \item[i.] Yes, it is safe to conclude that there is a relationship
                 between the predictor and the response. We can see that from
@@ -35,23 +35,23 @@ F-statistic: 599.7 on 1 and 390 DF,  p-value: < 2.2e-16
                 From this, we conclude that the linear regression is a relatively
                 good fit, and the relationship between the predictor and response
                 is strong.
-                \item[iii.] Since \verb|mpg| decreases as \verb|horsepower| increases
+            \item[iii.] Since \verb|mpg| decreases as \verb|horsepower| increases
                 along the regression line, we see that the relationship between
                 the predictor and response is negative.
             \item[iv.] We have the following output:
-                                \begin{lstlisting}
+                \begin{lstlisting}
 > predict(lm.fit, data.frame(horsepower = 98), interval = "confidence")
        fit      lwr      upr
 1 24.46708 23.97308 24.96108
-                                \end{lstlisting}
+                \end{lstlisting}
                 from which we conclude that the associated 95\% confidence interval
                 is [23.97308, 24.96108] for a predicted value of 24.46708.
                 For the prediction interval, we have
-                                \begin{lstlisting}
+                \begin{lstlisting}
 > predict(lm.fit, data.frame(horsepower = 98), interval = "prediction")
        fit     lwr      upr
 1 24.46708 14.8094 34.12476
-                                \end{lstlisting}
+                \end{lstlisting}
                 so that the interval is [14.8094, 34.12476] for the same predicted
                 value.
         \end{itemize}

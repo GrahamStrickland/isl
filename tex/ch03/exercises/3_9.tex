@@ -8,7 +8,7 @@
         \end{figure}
     \item[(b)] We have the following output from using the
         \verb|cor()| function:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > cor(Auto[,1:8])
                     mpg  cylinders displacement horsepower     weight
 mpg           1.0000000 -0.7776175   -0.8051269 -0.7784268 -0.8322442
@@ -28,9 +28,9 @@ weight         -0.4168392 -0.3091199 -0.5850054
 acceleration    1.0000000  0.2903161  0.2127458
 year            0.2903161  1.0000000  0.1815277
 origin          0.2127458  0.1815277  1.0000000
-                \end{lstlisting}
-        \item[(c)] We have the following output from using the \verb|lm()| function:
-                \begin{lstlisting}
+        \end{lstlisting}
+    \item[(c)] We have the following output from using the \verb|lm()| function:
+        \begin{lstlisting}
 > lm.fit <- lm(mpg ~ . - name, data = Auto)
 > summary(lm.fit)
 
@@ -57,14 +57,14 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 3.328 on 384 degrees of freedom
 Multiple R-squared:  0.8215,    Adjusted R-squared:  0.8182
 F-statistic: 252.4 on 7 and 384 DF,  p-value: < 2.2e-16
-                \end{lstlisting}
+        \end{lstlisting}
         \begin{itemize}
             \item[(i)] Yes, since we have several predictors with low $p$-values
                 and/or low standard error relative to the estimate.
             \item[(ii)] The predictors with the most statistically significant
                 relationship to the response appear to be \verb|displacement|,
                 \verb|weight|, \verb|year|, and \verb|origin|.
-                \item[(iii)] The coefficient of the \verb|year| variable is given
+            \item[(iii)] The coefficient of the \verb|year| variable is given
                 by 0.750773, suggesting that an increase of 1 year in the model's
                 date of manufacture is associated with an increase of 0.750773 miles
                 per gallon in fuel consumption by the vehicle.
@@ -87,7 +87,7 @@ F-statistic: 252.4 on 7 and 384 DF,  p-value: < 2.2e-16
     \item[(e)] Yes, we can see the interaction between
         \verb|horsepower| and \verb|year|
         is statistically equivalent by analysing the following linear regression:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > summary(lm(mpg ~ horsepower * year))
 
 Call:
@@ -110,14 +110,14 @@ Residual standard error: 3.901 on 388 degrees of freedom
 Multiple R-squared:  0.7522,    Adjusted R-squared:  0.7503
 F-statis$tic: 392.5 on 3 and 388 DF,  p-value: < 2.2e-16
 
-                \end{lstlisting}
+        \end{lstlisting}
         All $p$-values are less than $2 \times 10^{-16}$ and we have
         $R^2$ statistics
         both around 3/4 compared with the values around 2/3 for linear regression
         of \verb|mpg| on \verb|horsepower| and \verb|age| without an
         interaction term,
         which can be seen in the following linear regression summary:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > summary(lm(mpg ~ horsepower + year))
 
 Call:
@@ -138,13 +138,13 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 4.388 on 389 degrees of freedom
 Multiple R-squared:  0.6855,    Adjusted R-squared:  0.6839
 F-statistic: 423.9 on 2 and 389 DF,  p-value: < 2.2e-16
-                \end{lstlisting}
+        \end{lstlisting}
     \item[(f)] We can see from the following comparison of linear regression of
         \verb|mpg| on $\verb|horsepower|^2$, $\sqrt{\verb|horsepower|}$, and
         $\log{(\verb|horsepower|)}$ that the $\verb|horsepower|^2$ term provides the
         superior model, since it has the highest $F$-statistic (much greater than
         1), indicating the lack of evidence for the null hypothesis.
-                \begin{lstlisting}
+        \begin{lstlisting}
 > lm.fit <- lm(mpg ~ horsepower)
 > lm.fit2 <- lm(mpg ~ horsepower + I(horsepower^2))
 > anova(lm.fit, lm.fit2)
@@ -179,5 +179,5 @@ Model 2: mpg ~ horsepower + I(log(horsepower))
 2    389 7581.2  1    1804.7 92.601 < 2.2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-                \end{lstlisting}
+        \end{lstlisting}
 \end{itemize}

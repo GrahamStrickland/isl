@@ -3,7 +3,7 @@
     \item[(a)] We have the following output from a multiple
         regression of \verb|Sales|
         on \verb|Price|, \verb|Urban|, and \verb|US|:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > Carseats <- read.csv(
     "../datasets/Carseats.csv", header = T,
     na.strings = "?", stringsAsFactors = T
@@ -30,8 +30,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 2.472 on 396 degrees of freedom
 Multiple R-squared:  0.2393,    Adjusted R-squared:  0.2335
 F-statistic: 41.52 on 3 and 396 DF,  p-value: < 2.2e-16
-                \end{lstlisting}
-        \item[(b)] The \verb|Price| coefficent indicates that a decrease
+        \end{lstlisting}
+    \item[(b)] The \verb|Price| coefficent indicates that a decrease
         of \$1 in price
         results in a sales increase of about 54 carseats. From the qualititative
         variables \verb|Urban| and \verb|US|, we can see that since \verb|Urban|
@@ -73,13 +73,13 @@ F-statistic: 41.52 on 3 and 396 DF,  p-value: < 2.2e-16
                 \end{cases}.
             \end{split}
         \end{equation*}
-        \item[(d)] We can reject the null hypothesis for \verb|Price| and
+    \item[(d)] We can reject the null hypothesis for \verb|Price| and
         \verb|US|, since
         the associated $p$-values are less than $2^{-16}$.
-        \item[(e)] We have the following regression of \verb|Sales| on
+    \item[(e)] We have the following regression of \verb|Sales| on
         \verb|Price| and
         \verb|US|:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > lm.fit <- lm(Sales ~ Price + US)
 > summary(lm.fit)
 
@@ -101,18 +101,18 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 2.469 on 397 degrees of freedom
 Multiple R-squared:  0.2393,    Adjusted R-squared:  0.2354
 F-statistic: 62.43 on 2 and 397 DF,  p-value: < 2.2e-16
-                \end{lstlisting}
+        \end{lstlisting}
     \item[(f)] The models fit the data reasonably well, since in both cases, we
         have a relatively high $F$-statistic and low $p$-values, but the model
         in (e) is improved by omitting \verb|Urban| as a predictor.
     \item[(g)] We have the following:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > confint(lm.fit)
                   2.5 %      97.5 %
 (Intercept) 11.79032020 14.27126531
 Price       -0.06475984 -0.04419543
 USYes        0.69151957  1.70776632
-                \end{lstlisting}
+        \end{lstlisting}
         This indicates that 95\% confidence intervals for the intercept coefficient
         ($\beta_0$) are $[11.79032020,14.27126531]$, $[-0.06475984, -0.04419543]$
         for the \verb|Price| ($\beta_1$) coefficient, and $[0.69151957, 1.70776632]$

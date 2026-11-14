@@ -11,13 +11,13 @@
             \end{split}
         \end{equation*}
         where we make use of the following calculation:
-    \begin{lstlisting}
+        \begin{lstlisting}
 > p_hat <- function(x_1, x_2) {
 +   exp(-6 + 0.05 * x_1 + x_2) / (1 + exp(-6 + 0.05 * x_1 + x_2))
 + }
 > p_hat(40, 3.5)
 [1] 0.3775407
-    \end{lstlisting}
+        \end{lstlisting}
     \item[(b)] Suppose we have $\hat{p}(X) = 0.5$, then we must have
         \begin{equation*}
             \begin{split}
@@ -38,11 +38,11 @@
             \end{split}
         \end{equation*}
         where we make use of the following calculation:
-    \begin{lstlisting}
+        \begin{lstlisting}
 > x_1 <- 20 * log(0.5) + 50
 > print(x_1)
 [1] 36.13706
-    \end{lstlisting}
+        \end{lstlisting}
         Thus we conclude that the student would need to study for approximately 37
         hours to have a 50\% change of getting an A in the class.
 \end{itemize}

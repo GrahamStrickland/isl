@@ -24,7 +24,7 @@
         \end{figure}
     \item[(c)] Using the given model, we have the following results for the least
         squares regression prediction of \verb|y| using \verb|x1| and \verb|x2|:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > lm.fit <- lm(y ~ x1 + x2)
 > summary(lm.fit)
 
@@ -46,7 +46,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 1.056 on 97 degrees of freedom
 Multiple R-squared:  0.2088,    Adjusted R-squared:  0.1925
 F-statistic:  12.8 on 2 and 97 DF,  p-value: 1.164e-05
-                \end{lstlisting}
+        \end{lstlisting}
         The regression predicts values of $\hat{\beta}_0 = 2.1305$,
         $\hat{\beta}_1 = 1.4396$, and $\hat{\beta}_2 = 1.0097$, but the
         $p$-values for
@@ -60,7 +60,7 @@ F-statistic:  12.8 on 2 and 97 DF,  p-value: 1.164e-05
     \item[(d)] We have the following least squares regression for
         predicting \verb|y|
         from \verb|x1| alone:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > lm.fit <- lm(y ~ x1)
 > summary(lm.fit)
 
@@ -81,14 +81,14 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 1.055 on 98 degrees of freedom
 Multiple R-squared:  0.2024,    Adjusted R-squared:  0.1942
 F-statistic: 24.86 on 1 and 98 DF,  p-value: 2.661e-06
-                \end{lstlisting}
+        \end{lstlisting}
         In this case, we have much a smaller $p$-value of $2.66 \times {10}^{-6}$
         for the coefficient estimate $\hat{\beta}_1 = 1.9759$, so we may reject the
         null hypothesis $H_0 : \beta_1 = 0$.
     \item[(e)]We have the following least squares regression for
         predicting \verb|y|
         from \verb|x2| alone:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > lm.fit <- lm(y ~ x2)
 > summary(lm.fit)
 
@@ -109,7 +109,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 1.072 on 98 degrees of freedom
 Multiple R-squared:  0.1763,    Adjusted R-squared:  0.1679
 F-statistic: 20.98 on 1 and 98 DF,  p-value: 1.366e-05
-                \end{lstlisting}
+        \end{lstlisting}
         In this case, we also have much a smaller $p$-value of $1.37
         \times {10}^{-5}$
         for the coefficient estimate $\hat{\beta}_2 = 2.8996$, so we may

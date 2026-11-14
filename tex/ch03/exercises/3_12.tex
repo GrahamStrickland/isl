@@ -15,7 +15,7 @@
     \item[(b)] We use the same commands as in 3.11 to produce the
         following \verb|R|
         example:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > x <- rnorm(100)
 > y <- 2 * x + rnorm(100)
 > lm.fit <- lm(y ~ x + 0)
@@ -57,14 +57,14 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.4266 on 99 degrees of freedom
 Multiple R-squared:   0.83,     Adjusted R-squared:  0.8283
 F-statistic: 483.5 on 1 and 99 DF,  p-value: < 2.2e-16
-                \end{lstlisting}
+        \end{lstlisting}
         Clearly the coefficient estimate for $\hat{\beta}$ is not the
         same for both cases.
     \item[(c)] We use a similar process to output an example where the
         sum of squares
         of \verb|Y| is approximately equal to that of \verb|X|, so that we have the
         following:
-                \begin{lstlisting}
+        \begin{lstlisting}
 > x <- rnorm(100)
 > y <- x + rnorm(100, 0, 0.125)
 > lm.fit <- lm(y ~ x + 0)
@@ -106,7 +106,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.1253 on 99 degrees of freedom
 Multiple R-squared:  0.9867,    Adjusted R-squared:  0.9866
 F-statistic:  7369 on 1 and 99 DF,  p-value: < 2.2e-16
-                \end{lstlisting}
+        \end{lstlisting}
         While the coefficient estimates for $\hat{\beta}$ are not the
         same, they are much closer than in (b).
 \end{itemize}
