@@ -5,9 +5,9 @@
         on \verb|Price|, \verb|Urban|, and \verb|US|:
                 \begin{lstlisting}
 > Carseats <- read.csv(
-        "../datasets/Carseats.csv", header = T,
-        na.strings = "?", stringsAsFactors = T
-    )
+    "../datasets/Carseats.csv", header = T,
+    na.strings = "?", stringsAsFactors = T
+  )
 > lm.fit <- lm(Sales ~ Price + Urban + US, data = Carseats)
 > summary(lm.fit)
 
@@ -15,11 +15,11 @@ Call:
 lm(formula = Sales ~ Price + Urban + US, data = Carseats)
 
 Residuals:
-        Min      1Q  Median      3Q     Max
+    Min      1Q  Median      3Q     Max
 -6.9206 -1.6220 -0.0564  1.5786  7.0581
 
 Coefficients:
-                         Estimate Std. Error t value Pr(>|t|)
+             Estimate Std. Error t value Pr(>|t|)
 (Intercept) 13.043469   0.651012  20.036  < 2e-16 ***
 Price       -0.054459   0.005242 -10.389  < 2e-16 ***
 UrbanYes    -0.021916   0.271650  -0.081    0.936
@@ -87,11 +87,11 @@ Call:
 lm(formula = Sales ~ Price + US)
 
 Residuals:
-        Min      1Q  Median      3Q     Max
+    Min      1Q  Median      3Q     Max
 -6.9269 -1.6286 -0.0574  1.5766  7.0515
 
 Coefficients:
-                        Estimate Std. Error t value Pr(>|t|)
+            Estimate Std. Error t value Pr(>|t|)
 (Intercept) 13.03079    0.63098  20.652  < 2e-16 ***
 Price       -0.05448    0.00523 -10.416  < 2e-16 ***
 USYes        1.19964    0.25846   4.641 4.71e-06 ***
@@ -108,7 +108,7 @@ F-statistic: 62.43 on 2 and 397 DF,  p-value: < 2.2e-16
     \item[(g)] We have the following:
                 \begin{lstlisting}
 > confint(lm.fit)
-                                    2.5 %      97.5 %
+                  2.5 %      97.5 %
 (Intercept) 11.79032020 14.27126531
 Price       -0.06475984 -0.04419543
 USYes        0.69151957  1.70776632

@@ -105,11 +105,11 @@ Call:
 lm(formula = crim ~ ., data = Boston)
 
 Residuals:
-     Min     1Q Median     3Q    Max
+   Min     1Q Median     3Q    Max
 -8.534 -2.248 -0.348  1.087 73.923
 
 Coefficients:
-                            Estimate Std. Error t value Pr(>|t|)
+              Estimate Std. Error t value Pr(>|t|)
 (Intercept) 13.7783938  7.0818258   1.946 0.052271 .
 zn           0.0457100  0.0187903   2.433 0.015344 *
 indus       -0.0583501  0.0836351  -0.698 0.485709
@@ -160,7 +160,7 @@ F-statistic: 33.52 on 12 and 493 DF,  p-value: < 2.2e-16
         \verb|zn|:
     \begin{lstlisting}
 Coefficients:
-                         Estimate Std. Error t value Pr(>|t|)
+             Estimate Std. Error t value Pr(>|t|)
 (Intercept)    3.6135     0.3722   9.709  < 2e-16 ***
 poly(zn, 3)1 -38.7498     8.3722  -4.628  4.7e-06 ***
 poly(zn, 3)2  23.9398     8.3722   2.859  0.00442 **
@@ -170,7 +170,7 @@ poly(zn, 3)3 -10.0719     8.3722  -1.203  0.22954
         For the predictor \verb|indus|:
     \begin{lstlisting}
 Coefficients:
-                                Estimate Std. Error t value Pr(>|t|)
+                Estimate Std. Error t value Pr(>|t|)
 (Intercept)        3.614      0.330  10.950  < 2e-16 ***
 poly(indus, 3)1   78.591      7.423  10.587  < 2e-16 ***
 poly(indus, 3)2  -24.395      7.423  -3.286  0.00109 **
@@ -180,7 +180,7 @@ poly(indus, 3)3  -54.130      7.423  -7.292  1.2e-12 ***
         For the predictor \verb|nox|:
     \begin{lstlisting}
 Coefficients:
-                            Estimate Std. Error t value Pr(>|t|)
+              Estimate Std. Error t value Pr(>|t|)
 (Intercept)     3.6135     0.3216  11.237  < 2e-16 ***
 poly(nox, 3)1  81.3720     7.2336  11.249  < 2e-16 ***
 poly(nox, 3)2 -28.8286     7.2336  -3.985 7.74e-05 ***
@@ -190,7 +190,7 @@ poly(nox, 3)3 -60.3619     7.2336  -8.345 6.96e-16 ***
         For the predictor \verb|rm|:
     \begin{lstlisting}
 Coefficients:
-                         Estimate Std. Error t value Pr(>|t|)
+             Estimate Std. Error t value Pr(>|t|)
 (Intercept)    3.6135     0.3703   9.758  < 2e-16 ***
 poly(rm, 3)1 -42.3794     8.3297  -5.088 5.13e-07 ***
 poly(rm, 3)2  26.5768     8.3297   3.191  0.00151 **
@@ -200,7 +200,7 @@ poly(rm, 3)3  -5.5103     8.3297  -0.662  0.50858
         For the predictor \verb|age|:
     \begin{lstlisting}
 Coefficients:
-                            Estimate Std. Error t value Pr(>|t|)
+              Estimate Std. Error t value Pr(>|t|)
 (Intercept)     3.6135     0.3485  10.368  < 2e-16 ***
 poly(age, 3)1  68.1820     7.8397   8.697  < 2e-16 ***
 poly(age, 3)2  37.4845     7.8397   4.781 2.29e-06 ***
@@ -210,7 +210,7 @@ poly(age, 3)3  21.3532     7.8397   2.724  0.00668 **
         For the predictor \verb|dis|:
     \begin{lstlisting}
 Coefficients:
-                            Estimate Std. Error t value Pr(>|t|)
+              Estimate Std. Error t value Pr(>|t|)
 (Intercept)     3.6135     0.3259  11.087  < 2e-16 ***
 poly(dis, 3)1 -73.3886     7.3315 -10.010  < 2e-16 ***
 poly(dis, 3)2  56.3730     7.3315   7.689 7.87e-14 ***
@@ -220,7 +220,7 @@ poly(dis, 3)3 -42.6219     7.3315  -5.814 1.09e-08 ***
         For the predictor \verb|rad|:
     \begin{lstlisting}
 Coefficients:
-                            Estimate Std. Error t value Pr(>|t|)
+              Estimate Std. Error t value Pr(>|t|)
 (Intercept)     3.6135     0.2971  12.164  < 2e-16 ***
 poly(rad, 3)1 120.9074     6.6824  18.093  < 2e-16 ***
 poly(rad, 3)2  17.4923     6.6824   2.618  0.00912 **
@@ -230,7 +230,7 @@ poly(rad, 3)3   4.6985     6.6824   0.703  0.48231
         For the predictor \verb|tax|:
     \begin{lstlisting}
 Coefficients:
-                            Estimate Std. Error t value Pr(>|t|)
+              Estimate Std. Error t value Pr(>|t|)
 (Intercept)     3.6135     0.3047  11.860  < 2e-16 ***
 poly(tax, 3)1 112.6458     6.8537  16.436  < 2e-16 ***
 poly(tax, 3)2  32.0873     6.8537   4.682 3.67e-06 ***
@@ -240,7 +240,7 @@ poly(tax, 3)3  -7.9968     6.8537  -1.167    0.244
         For the predictor \verb|ptratio|:
     \begin{lstlisting}
 Coefficients:
-                                    Estimate Std. Error t value Pr(>|t|)
+                  Estimate Std. Error t value Pr(>|t|)
 (Intercept)          3.614      0.361  10.008  < 2e-16 ***
 poly(ptratio, 3)1   56.045      8.122   6.901 1.57e-11 ***
 poly(ptratio, 3)2   24.775      8.122   3.050  0.00241 **
@@ -250,7 +250,7 @@ poly(ptratio, 3)3  -22.280      8.122  -2.743  0.00630 **
         For the predictor \verb|lstat|:
     \begin{lstlisting}
 Coefficients:
-                                Estimate Std. Error t value Pr(>|t|)
+                Estimate Std. Error t value Pr(>|t|)
 (Intercept)       3.6135     0.3392  10.654   <2e-16 ***
 poly(lstat, 3)1  88.0697     7.6294  11.543   <2e-16 ***
 poly(lstat, 3)2  15.8882     7.6294   2.082   0.0378 *
@@ -260,7 +260,7 @@ poly(lstat, 3)3 -11.5740     7.6294  -1.517   0.1299
         For the predictor \verb|medv|:
     \begin{lstlisting}
 Coefficients:
-                             Estimate Std. Error t value Pr(>|t|)
+               Estimate Std. Error t value Pr(>|t|)
 (Intercept)       3.614      0.292  12.374  < 2e-16 ***
 poly(medv, 3)1  -75.058      6.569 -11.426  < 2e-16 ***
 poly(medv, 3)2   88.086      6.569  13.409  < 2e-16 ***

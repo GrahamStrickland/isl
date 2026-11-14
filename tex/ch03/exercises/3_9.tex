@@ -10,7 +10,7 @@
         \verb|cor()| function:
                 \begin{lstlisting}
 > cor(Auto[,1:8])
-                                        mpg  cylinders displacement horsepower     weight
+                    mpg  cylinders displacement horsepower     weight
 mpg           1.0000000 -0.7776175   -0.8051269 -0.7784268 -0.8322442
 cylinders    -0.7776175  1.0000000    0.9508233  0.8429834  0.8975273
 displacement -0.8051269  0.9508233    1.0000000  0.8972570  0.9329944
@@ -19,7 +19,7 @@ weight       -0.8322442  0.8975273    0.9329944  0.8645377  1.0000000
 acceleration  0.4233285 -0.5046834   -0.5438005 -0.6891955 -0.4168392
 year          0.5805410 -0.3456474   -0.3698552 -0.4163615 -0.3091199
 origin        0.5652088 -0.5689316   -0.6145351 -0.4551715 -0.5850054
-                         acceleration       year     origin
+             acceleration       year     origin
 mpg             0.4233285  0.5805410  0.5652088
 cylinders      -0.5046834 -0.3456474 -0.5689316
 displacement   -0.5438005 -0.3698552 -0.6145351
@@ -38,11 +38,11 @@ Call:
 lm(formula = mpg ~ . - name, data = Auto)
 
 Residuals:
-        Min      1Q  Median      3Q     Max
+    Min      1Q  Median      3Q     Max
 -9.5903 -2.1565 -0.1169  1.8690 13.0604
 
 Coefficients:
-                             Estimate Std. Error t value Pr(>|t|)
+               Estimate Std. Error t value Pr(>|t|)
 (Intercept)  -17.218435   4.644294  -3.707  0.00024 ***
 cylinders     -0.493376   0.323282  -1.526  0.12780
 displacement   0.019896   0.007515   2.647  0.00844 **
@@ -94,11 +94,11 @@ Call:
 lm(formula = mpg ~ horsepower * year)
 
 Residuals:
-         Min       1Q   Median       3Q      Max
+     Min       1Q   Median       3Q      Max
 -12.3492  -2.4509  -0.4557   2.4056  14.4437
 
 Coefficients:
-                                    Estimate Std. Error t value Pr(>|t|)
+                  Estimate Std. Error t value Pr(>|t|)
 (Intercept)     -1.266e+02  1.212e+01 -10.449   <2e-16 ***
 horsepower       1.046e+00  1.154e-01   9.063   <2e-16 ***
 year             2.192e+00  1.613e-01  13.585   <2e-16 ***
@@ -124,11 +124,11 @@ Call:
 lm(formula = mpg ~ horsepower + year)
 
 Residuals:
-         Min       1Q   Median       3Q      Max
+     Min       1Q   Median       3Q      Max
 -12.0768  -3.0783  -0.4308   2.5884  15.3153
 
 Coefficients:
-                            Estimate Std. Error t value Pr(>|t|)
+              Estimate Std. Error t value Pr(>|t|)
 (Intercept) -12.739166   5.349027  -2.382   0.0177 *
 horsepower   -0.131654   0.006341 -20.761   <2e-16 ***
 year          0.657268   0.066262   9.919   <2e-16 ***
@@ -152,7 +152,7 @@ Analysis of Variance Table
 
 Model 1: mpg ~ horsepower
 Model 2: mpg ~ horsepower + I(horsepower^2)
-    Res.Df    RSS Df Sum of Sq      F    Pr(>F)
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)
 1    390 9385.9
 2    389 7442.0  1    1943.9 101.61 < 2.2e-16 ***
 ---
@@ -163,7 +163,7 @@ Analysis of Variance Table
 
 Model 1: mpg ~ horsepower
 Model 2: mpg ~ horsepower + I(sqrt(horsepower))
-    Res.Df    RSS Df Sum of Sq      F    Pr(>F)
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)
 1    390 9385.9
 2    389 7502.2  1    1883.7 97.672 < 2.2e-16 ***
 ---
@@ -174,7 +174,7 @@ Analysis of Variance Table
 
 Model 1: mpg ~ horsepower
 Model 2: mpg ~ horsepower + I(log(horsepower))
-    Res.Df    RSS Df Sum of Sq      F    Pr(>F)
+  Res.Df    RSS Df Sum of Sq      F    Pr(>F)
 1    390 9385.9
 2    389 7581.2  1    1804.7 92.601 < 2.2e-16 ***
 ---
