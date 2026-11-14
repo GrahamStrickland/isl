@@ -1,0 +1,37 @@
+% Exercise 4.10
+We have for $p = 1$ that
+\begin{equation*}
+    \begin{split}
+        \log{\biggl(\frac{\text{Pr}(Y = k \vert X = x)}{\text{Pr}(Y = K \vert X = x)}\biggr)}
+        &= \log{\biggl(\frac{\pi_k f_k(x)}{\pi_K f_K(x)}\biggr)} \\
+        &= \log{\Biggl(\frac{
+            \pi_k \frac{1}{\sqrt{2\pi}\sigma_k} \exp{\bigl(-\frac{1}{2\sigma_k^2} {(x - \mu_k)}^2\bigr)}
+        }{
+            \pi_K \frac{1}{\sqrt{2\pi}\sigma_K} \exp{\bigl(-\frac{1}{2\sigma_K^2} {(x - \mu_K)}^2\bigr)}
+        }\Biggr)} \\
+        &= \log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \log{\biggl(\frac{\sigma_k}{\sigma_K}\biggr)}
+            - \frac{1}{2\sigma_k^2} {(x - \mu_k)}^2 \\
+        &\qquad + \frac{1}{2\sigma_K^2} {(x - \mu_K)}^2.
+    \end{split}
+\end{equation*}
+If we assume that the mean $u_k$ is class-specific but the variance is shared between 
+all classes, as with the shared covariance matrix $\mathbf{\Sigma}$, then we have
+$\sigma_k = \sigma_K$ for all $k = 1, \ldots, K$, so that we have
+\begin{equation*}
+    \begin{split}
+        \log{\biggl(\frac{\text{Pr}(Y = k \vert X = x)}{\text{Pr}(Y = K \vert X = x)}\biggr)}
+        &= \log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \log{\biggl(\frac{\sigma_K}{\sigma_K}\biggr)}
+            - \frac{1}{2\sigma_K^2} {(x - \mu_k)}^2 \\
+        &\qquad + \frac{1}{2\sigma_K^2} {(x - \mu_K)}^2 \\
+        &= \log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \log{1} - \frac{1}{2\sigma^2} {(x - \mu_k)}^2 \\
+        &\qquad + \frac{1}{2\sigma^2} {(x - \mu_K)}^2 \\
+        &= \log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} + \frac{1}{2\sigma^2} (x^2 - 2\mu_k x - \mu_k^2 \\
+        &\qquad - x^2 + 2\mu_K x + \mu_K^2) \\
+        &= \log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} + \frac{1}{2\sigma^2} (\mu_K^2 - \mu_k^2)
+        + \frac{1}{\sigma^2} (\mu_K - \mu_k) x \\
+        &= a_k + b_{kj}x_j,
+    \end{split}
+\end{equation*}
+where $a_k = \log{\Bigl(\frac{\pi_k}{\pi_K}\Bigr)} + \frac{1}{2\sigma^2} (\mu_K^2 - \mu_k^2)$ and
+$b_{kj} = \frac{1}{\sigma^2} (\mu_K - \mu_k)$, with $j = 1$.
+
