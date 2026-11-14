@@ -1,7 +1,7 @@
 % Exercise 3.13
 \begin{itemize}
     \item[(a)] We have the following \verb|R| output:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > x <- rnorm(100, 0, 1)
 > x
   [1] -0.626453811  0.183643324 -0.835628612  1.595280802  0.329507772
@@ -24,10 +24,10 @@
  [86]  0.332950371  1.063099837 -0.304183924  0.370018810  0.267098791
  [91] -0.542520031  1.207867806  1.160402616  0.700213650  1.586833455
  [96]  0.558486426 -1.276592208 -0.573265414 -1.224612615 -0.473400636
-        \end{verbatim}\normalsize
+        \end{lstlisting}
   \item[(b)] We have the following output, where the standard deviation
     $\sigma = \sqrt{V(\varepsilon)} = \sqrt{0.25} = 0.0625$:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > eps <- rnorm(100, 0, 0.0625)
 > eps
   [1] -0.038772917  0.002632242 -0.056932603  0.009876798 -0.040911540
@@ -50,10 +50,10 @@
  [86] -0.009922163  0.091536707 -0.047880125 -0.026888235 -0.057881844
  [91] -0.011068998  0.025125736 -0.045734261  0.051898323 -0.075505174
  [96] -0.065499026  0.090072357 -0.063490467  0.025748420 -0.023817253
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     \item[(c)] We have the following \verb|R| commands to produce the vector
     \verb|y|:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > y <- -1.0 + 0.5*x + eps
 > y
   [1] -1.35199982 -0.90554610 -1.47474691 -0.19248280 -0.87615765 -1.29977874
@@ -73,7 +73,7 @@
  [85] -0.67046298 -0.84344698 -0.37691337 -1.19997209 -0.84187883 -0.92433245
  [91] -1.28232901 -0.37094036 -0.46553295 -0.59799485 -0.28208845 -0.78625581
  [97] -1.54822375 -1.35012317 -1.58655789 -1.26051757
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     The length of \verb|y| is clearly 100 and the values of the
     coefficients in this linear model are given by $\beta_0 = -1$
     and $\beta_1 = 0.5$.
@@ -88,7 +88,7 @@
     The scatter plot is quite clearly linear, which makes sense given the
     simple linear model used.
     \item[(e)] We have the following \verb|R| output:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > lm.fit <- lm(y ~ x)
 > summary(lm.fit)
 
@@ -109,7 +109,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.06017 on 98 degrees of freedom
 Multiple R-squared:  0.9825,    Adjusted R-squared:  0.9824
 F-statistic:  5513 on 1 and 98 DF,  p-value: < 2.2e-16
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     The coefficients in the linear regression are quite close to the
     actual values,
     i.e., $\hat{\beta}_0 = -1.002356 \approx \beta_0 = -1$ and
@@ -125,7 +125,7 @@ F-statistic:  5513 on 1 and 98 DF,  p-value: < 2.2e-16
       \label{fig3_13lines}}
     \end{figure}
     \item[(g)] We have the following \verb|R| output:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > lm.fit <- lm(y ~ x + I(x^2))
 > summary(lm.fit)
 
@@ -147,7 +147,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.05988 on 97 degrees of freedom
 Multiple R-squared:  0.9829,    Adjusted R-squared:  0.9825
 F-statistic:  2785 on 2 and 97 DF,  p-value: < 2.2e-16
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     Given the high $p$-value of 0.164 associated with $\hat{\beta}_2$
     in the model
     $\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X + \hat{\beta}_2X^2$, we
@@ -157,7 +157,7 @@ F-statistic:  2785 on 2 and 97 DF,  p-value: < 2.2e-16
   \item[(h)] We have the following result with a lower variance given by
     $V(\varepsilon) = 0.1$, so that the standard deviation is given by
     $\sqrt{V(\varepsilon)} = \sqrt{0.1} \approx 0.3162278$:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > x <- rnorm(100, 0, 1)
 > eps <- rnorm(100, 0, sqrt(0.1))
 > y <- -1.0 + 0.5*x + eps
@@ -203,7 +203,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.3147 on 97 degrees of freedom
 Multiple R-squared:  0.7585,    Adjusted R-squared:  0.7535
 F-statistic: 152.3 on 2 and 97 DF,  p-value: < 2.2e-16
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     We can see that the result for the linear model is similar in that it
     $\hat{\beta}_0 = -0.98468 \approx \beta_0 = -1$,
     $\hat{\beta}_1 = 0.53359 \approx 0.5$, with corresponding $p$-values
@@ -213,7 +213,7 @@ F-statistic: 152.3 on 2 and 97 DF,  p-value: < 2.2e-16
     4 times that of the model in (g).
   \item[(i)] Using the same $x$ values but a variance of $V(\varepsilon) = 0.5$,
     we have the following:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > eps <- rnorm(100, 0, sqrt(0.5))
 > y <- -1.0 + 0.5*x + eps
 > lm.fit <- lm(y ~ x)
@@ -258,7 +258,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.83 on 97 degrees of freedom
 Multiple R-squared:  0.309,     Adjusted R-squared:  0.2947
 F-statistic: 21.69 on 2 and 97 DF,  p-value: 1.64e-08
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     In this model with more noise in the data, we can see that the
     $p$-value for the $\hat{\beta}_1$ term in the linear model has
     increased significantly to $3.59 \times {10}^{-9}$ and similarly

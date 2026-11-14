@@ -12,7 +12,7 @@
 
     Arbitrary polynomials of the appropriate degree were used to generate these
     plots, since they are approximations, using the following script:
-    \scriptsize\begin{verbatim}
+    \begin{lstlisting}
 # Exercise 2.3(a) - Plots of error curves
 
 squared_bias <- function(x) {
@@ -70,7 +70,7 @@ legend("topright",
 
 dev.off()
 
-    \end{verbatim}\normalsize
+    \end{lstlisting}
   \item[(b)] We are given that the training error will always be greater than
     the (squared) bias, and that both will be u-shaped. The variance will always
     be less than the (squared) bias, while the test error will

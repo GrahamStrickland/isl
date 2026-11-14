@@ -2,7 +2,7 @@
 \begin{itemize}
   \item[(a)] We have the following values for the simple linear regression of
     \verb|y| onto \verb|x| without a coefficient:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > lm.fit <- lm(y ~ x + 0)
 > summary(lm.fit)
 
@@ -22,7 +22,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.9586 on 99 degrees of freedom
 Multiple R-squared:  0.7798,    Adjusted R-squared:  0.7776
 F-statistic: 350.7 on 1 and 99 DF,  p-value: < 2.2e-16
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     From the above, we can see that $\hat{\beta} = 1.9939$, the standard error
     of $\hat{\beta}$ is 0.1065, the $t$-statistic is 18.73, and the $p$-value
     associated with the null hypothesis $H_0 : \beta = 0$ is given by
@@ -39,7 +39,7 @@ F-statistic: 350.7 on 1 and 99 DF,  p-value: < 2.2e-16
     data.
   \item[(b)] We have the following values for the simple linear regression of
     \verb|x| onto \verb|y| without a coefficient:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > lm.fit <- lm(x ~ y + 0)
 > summary(lm.fit)
 
@@ -59,7 +59,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.4246 on 99 degrees of freedom
 Multiple R-squared:  0.7798,    Adjusted R-squared:  0.7776
 F-statistic: 350.7 on 1 and 99 DF,  p-value: < 2.2e-16
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     From the above, we can see that $\hat{\beta} = 0.39111$, the standard error
     of $\hat{\beta}$ is 0.02089, the $t$-statistic is 18.73, and the $p$-value
     associated with the null hypothesis $H_0 : \beta = 0$ is given by
@@ -184,7 +184,7 @@ F-statistic: 350.7 on 1 and 99 DF,  p-value: < 2.2e-16
     since the expression in (d) is symmetric with respect to \verb|x| and
     \verb|y|.
     \item[(f)] We demonstrate using the following \verb|R| code:
-        \scriptsize\begin{verbatim}
+        \begin{lstlisting}
 > set.seed(1)
 > x <- rnorm(100)
 > y <- 2 * x + rnorm(100)
@@ -229,7 +229,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.4249 on 98 degrees of freedom
 Multiple R-squared:  0.7784,    Adjusted R-squared:  0.7762
 F-statistic: 344.3 on 1 and 98 DF,  p-value: < 2.2e-16
-        \end{verbatim}\normalsize
+        \end{lstlisting}
     We can see that the $t$-statistic given by 18.556 for the
     regression of \verb|y|
     onto \verb|x| is approximately the same as the $t$-statistic
