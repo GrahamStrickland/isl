@@ -3,18 +3,36 @@ We have
 \begin{equation*}
     \begin{split}
         &\log{\biggl(\frac{\text{Pr}(Y = k \vert X = x)}{\text{Pr}(Y = K \vert X = x)}\biggr)} \\
-        = &\log{\biggl(\frac{\pi_k f_k(x)}{\pi_K f_K(x)}\biggr)} \\
-        = &\log{\Biggl(\frac{
+        =\, &\log{\biggl(\frac{\pi_k f_k(x)}{\pi_K f_K(x)}\biggr)} \\
+        =\, &\log{\Biggl(\frac{
             \pi_k \exp{\bigl(-\frac{1}{2}{(x - \mu_k)}^T}\mathbf{\Sigma}_k^{-1}(x - \mu_k)\bigr)
         }{
             \pi_K \exp{\bigl(-\frac{1}{2}{(x - \mu_K)}^T}\mathbf{\Sigma}_K^{-1}(x - \mu_K)\bigr)
         }\Biggr)} \\
-        = &\log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \frac{1}{2}{(x - \mu_k)}^T \mathbf{\Sigma}_k^{-1}
+        =\, &\log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \frac{1}{2}{(x - \mu_k)}^T \mathbf{\Sigma}_k^{-1}
             (x - \mu_k) + \frac{1}{2}{(x - \mu_K)}^T \mathbf{\Sigma}_K^{-1} (x - \mu_K) \\
-        = &\log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \frac{1}{2}\bigl(\mu_k^T\mathbf{\Sigma}_k^{-1}\mu_k
+        =\, &\log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \frac{1}{2}\bigl(\mu_k^T\mathbf{\Sigma}_k^{-1}\mu_k
             - \mu_K^T\mathbf{\Sigma}_K^{-1}\mu_K\bigr)
             + \frac{1}{2}x^T(\mathbf{\Sigma}_k^{-1}\mu_k - \mathbf{\Sigma}_K^{-1}\mu_K) \\
         &\qquad + \frac{1}{2}(\mathbf{\Sigma}_k^{-1}\mu_k - \mathbf{\Sigma}_K^{-1}\mu_K)x
-            - \frac{1}{2}x^T(\mathbf{\Sigma}_k^{-1} - \mathbf{\Sigma}_K^{-1})x
+            - \frac{1}{2}x^T(\mathbf{\Sigma}_k^{-1} - \mathbf{\Sigma}_K^{-1})x \\
+        =\, &\log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \frac{1}{2}\bigl(\mu_k^T\mathbf{\Sigma}_k^{-1}\mu_k
+            - \mu_K^T\mathbf{\Sigma}_K^{-1}\mu_K\bigr)
+            + \frac{1}{2}(\mathbf{\Sigma}_k^{-1}\mu_k - \mathbf{\Sigma}_K^{-1}\mu_K)(x^T + x) \\
+        &\qquad - \frac{1}{2}(\mathbf{\Sigma}_k^{-1} - \mathbf{\Sigma}_K^{-1})x^Tx \\
+        &=\, a_k + \sum_{j=1}^p{b_{kj} x_j} + \sum{j=1}^p{\sum_{l=1}^p{c_{kjl}x_jx_l}},
     \end{split}
 \end{equation*}
+where
+\[
+    a_k = \log{\biggl(\frac{\pi_k}{\pi_K}\biggr)} - \frac{1}{2}\bigl(\mu_k^T\mathbf{\Sigma}_k^{-1}\mu_k
+            - \mu_K^T\mathbf{\Sigma}_K^{-1}\mu_K\bigr),
+\]
+$b_{kj}$ the $j$th component of
+\[
+    \frac{1}{2}(\mathbf{\Sigma}_k^{-1}\mu_k - \mathbf{\Sigma}_K^{-1}\mu_K),
+\]
+and $c_{kjl}$ the $j,l$th component of
+\[
+    - \frac{1}{2}(\mathbf{\Sigma}_k^{-1} - \mathbf{\Sigma}_K^{-1}).
+\]
